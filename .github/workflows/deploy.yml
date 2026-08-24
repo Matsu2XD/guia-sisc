@@ -17,7 +17,6 @@ jobs:
           port: 22
           script_stop: true
           script: |
-            export GIT_SSH_COMMAND="ssh -i ~/.ssh/github_deploy -o StrictHostKeyChecking=accept-new"
             cd /var/www/guia-sisc
             git pull origin master
             npm ci
