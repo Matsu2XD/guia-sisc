@@ -1,0 +1,75 @@
+---
+// Bloco 2 — Registro e Financiamento do SCFV
+import SectionHeader from '@/components/astro/layout/SectionHeader.astro'
+import InfoCard from '@/components/astro/content/InfoCard.astro'
+import AlertBox from '@/components/astro/content/AlertBox.astro'
+---
+
+<!-- ============ COMO O SCFV É REGISTRADO ============ -->
+<section id="registro-sisc" class="animate-fade-in bg-white dark:bg-slate-800 shadow-md rounded-xl p-6 md:p-10 print:shadow-none print:rounded-none space-y-6">
+  <SectionHeader number="2.1" title="Como o SCFV é registrado ?" accent="green"
+    subtitle="CadÚnico, NIS e o Sistema de Informações do SCFV (SISC)" />
+
+  <p class="text-slate-700 dark:text-slate-300 leading-relaxed">
+    O registro do SCFV ocorre em <strong>dois momentos</strong>: o <strong>cadastro dos usuários</strong>, feito no Cadastro Único para Programas Sociais (CadÚnico), e o <strong>registro da oferta do serviço</strong>, feito no <strong>SISC — Sistema de Informações do Serviço de Convivência e Fortalecimento de Vínculos</strong>.
+  </p>
+
+  <div class="grid grid-cols-1 md:grid-cols-2 gap-4">
+    <InfoCard title="Cadastro Único (CadÚnico)" accent="blue">
+      <p class="text-sm">Todos os usuários do SCFV devem estar cadastrados no <strong>CadÚnico</strong> e possuir o <strong>Número de Identificação Social (NIS)</strong>. O NIS é o identificador que permite o registro e o acompanhamento do usuário no SISC e nos demais sistemas.</p>
+    </InfoCard>
+    <InfoCard title="SISC" accent="green">
+      <p class="text-sm">Sistema de Informações do SCFV — ferramenta de gestão na qual o gestor municipal registra os <strong>grupos</strong>, <strong>víncula usuários</strong> e <strong>confirma a participação</strong> dos usuários ofertantes do serviço. </p>
+    </InfoCard>
+  </div>
+
+  <h3 class="text-lg font-bold text-slate-800 dark:text-white mt-2">O que é registrado no SISC</h3>
+  <div class="grid grid-cols-1 md:grid-cols-2 gap-3 text-sm text-slate-700 dark:text-slate-300">
+    <div class="flex items-start gap-3 rounded-lg border border-slate-200 dark:border-slate-600 bg-slate-50 dark:bg-slate-700/30 p-3">
+      <span class="w-2 h-2 shrink-0 mt-1.5 rounded-full bg-institucional-green"></span>
+      <p><strong>Grupos</strong> do SCFV: nome, faixa etária, periodicidade, carga horária, unidade/entidade e técnico/orientador responsável.</p>
+    </div>
+    <div class="flex items-start gap-3 rounded-lg border border-slate-200 dark:border-slate-600 bg-slate-50 dark:bg-slate-700/30 p-3">
+      <span class="w-2 h-2 shrink-0 mt-1.5 rounded-full bg-institucional-green"></span>
+      <p><strong>Usuários</strong>: vínculo aos grupos, situação prioritária e histórico.</p>
+    </div>
+    <div class="flex items-start gap-3 rounded-lg border border-slate-200 dark:border-slate-600 bg-slate-50 dark:bg-slate-700/30 p-3">
+      <span class="w-2 h-2 shrink-0 mt-1.5 rounded-full bg-institucional-green"></span>
+      <p><strong>Participação</strong>: confirmação trimestral da participação efetiva dos usuários no serviço.</p>
+    </div>
+    <div class="flex items-start gap-3 rounded-lg border border-slate-200 dark:border-slate-600 bg-slate-50 dark:bg-slate-700/30 p-3">
+      <span class="w-2 h-2 shrink-0 mt-1.5 rounded-full bg-institucional-green"></span>
+      <p><strong>Relatórios</strong>: de usuários, de grupos e de situações prioritárias para a gestão local.</p>
+    </div>
+  </div>
+
+  <AlertBox variant="info" title="Usuários de 18 a 59 anos">
+    É permitido o cadastro de usuários de <strong>18 a 59 anos</strong> no SCFV e no SISC (Resolução CNAS nº 13/2014). A oferta para essa faixa, porém, <strong>não conta com cofinanciamento federal</strong> — o sistema emite aviso de não cofinanciamento ao criar grupos dessa faixa.
+  </AlertBox>
+</section>
+
+<!-- ============ COMO O SCFV É FINANCIADO ============ -->
+<section id="financiamento-scfv" class="animate-fade-in bg-white dark:bg-slate-800 shadow-md rounded-xl p-6 md:p-10 print:shadow-none print:rounded-none space-y-6">
+  <SectionHeader number="2.2" title="Como é Financiado ?" accent="green"
+    subtitle="Cofinanciamento federal via Piso Básico Variável (PBV)" />
+
+  <p class="text-slate-700 dark:text-slate-300 leading-relaxed">
+    O SCFV é cofinanciado pelos três entes federados (União, Estados e Municípios/DF). O <strong>cofinanciamento federal</strong> é destinado aos municípios e ao DF por meio do <strong>Piso Básico Variável (PBV)</strong>, com base nas informações registradas no <strong>SISC</strong>.
+  </p>
+
+  <div class="grid grid-cols-1 md:grid-cols-3 gap-4">
+    <InfoCard title="Aferição trimestral" accent="blue">
+      <p class="text-sm">A confirmação da participação dos usuários deve ser feita até o <strong>dia 20 do último mês do trimestre</strong>, conforme a Portaria MDS nº 134/2013. Os dados alimentam o cálculo do repasse.</p>
+    </InfoCard>
+    <InfoCard title="Cálculo pelo registro" accent="green">
+      <p class="text-sm">O repasse federal considera os usuários efetivamente confirmados como participantes no SISC, por faixa etária e grupo.</p>
+    </InfoCard>
+    <InfoCard title="Obrigatoriedade do preenchimento" accent="purple">
+      <p class="text-sm">O não cumprimento do registro e da confirmação pode levar a <strong>suspensão ou bloqueio</strong> do cofinanciamento federal do SCFV.</p>
+    </InfoCard>
+  </div>
+
+  <AlertBox variant="info" title="Portaria MDS nº 1.068/2025 (regra excepcional)">
+    Durante o período de recomposição do sistema (2025), a Portaria MDS nº 1.068/2025 estabeleceu regras excepcionais para garantir a continuidade de repasses. O preenchimento do SISC permanece obrigatório para todos os municípios cofinanciados, subsidiando o retrato nacional da execução do SCFV.
+  </AlertBox>
+</section>

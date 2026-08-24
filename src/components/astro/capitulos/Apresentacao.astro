@@ -1,0 +1,78 @@
+---
+// Apresentação do Guia do SISC
+import FeatureCard from '@/components/astro/content/FeatureCard.astro'
+import AlertBox from '@/components/astro/content/AlertBox.astro'
+---
+
+<section id="apresentacao" class="animate-fade-in bg-white dark:bg-slate-800 shadow-xl rounded-2xl p-8 md:p-16 print:shadow-none print:rounded-none print:break-before-page">
+  <div class="flex items-center gap-3 mb-3">
+    <div class="w-10 h-10 rounded-xl bg-institucional-green flex items-center justify-center shadow-md shadow-institucional-green/25">
+      <svg xmlns="http://www.w3.org/2000/svg" width="18" height="18" viewBox="0 0 24 24" fill="none" stroke="white" stroke-width="2.5" stroke-linecap="round" stroke-linejoin="round"><path d="M2 3h6a4 4 0 0 1 4 4v14a3 3 0 0 0-3-3H2z"/><path d="M22 3h-6a4 4 0 0 0-4 4v14a3 3 0 0 1 3-3h7z"/></svg>
+    </div>
+    <h2 class="text-3xl md:text-4xl font-extrabold text-slate-800 dark:text-white tracking-tight">Apresentação</h2>
+  </div>
+
+  <div class="h-1 w-20 rounded-full bg-gradient-to-r from-institucional-green to-green-300 mb-8" />
+
+  <div class="prose max-w-none text-slate-600 dark:text-slate-400 space-y-4 text-base leading-relaxed">
+    <p class="text-lg">O <strong class="text-slate-800 dark:text-white">SISC — Sistema de Informações do Serviço de Convivência e Fortalecimento de Vínculos</strong> é a ferramenta de gestão nacional da Rede SUAS destinada ao registro e acompanhamento do SCFV. Este guia reúne orientações conceituais sobre o serviço e o passo a passo de utilização do sistema.</p>
+    <p>Organizado para apoiar gestores municipais e técnicos da assistência social, o material aborda desde a finalidade do SISC e do SCFV até o registro de grupos, usuários e a confirmação de participação.</p>
+  </div>
+
+  <!-- Estrutura do Guia -->
+  <div class="mt-10">
+    <div class="border-l-4 border-institucional-green bg-gradient-to-br from-green-50 to-green-100/60 dark:from-green-950/40 dark:to-green-900/20 rounded-r-xl pl-5 py-3 mb-8">
+      <h3 class="text-xl font-bold text-slate-800 dark:text-white">Estrutura do Guia</h3>
+      <p class="text-sm text-slate-600 dark:text-slate-400 mt-2 italic leading-relaxed">
+        O guia combina o conteúdo conceitual do SCFV com tutoriais práticos das telas do sistema, todos ilustrados com as capturas do Manual do SISC.
+      </p>
+    </div>
+
+    <!-- Sigilo das Informações -->
+    <div class="border-l-4 border-amber-500 bg-gradient-to-br from-amber-50 to-amber-100/60 dark:from-amber-950/40 dark:to-amber-900/20 rounded-r-xl pl-5 py-3 mb-8 mt-6">
+      <h3 class="text-xl font-bold text-slate-800 dark:text-white">Sigilo das Informações</h3>
+      <p class="text-sm text-slate-600 dark:text-slate-400 mt-2 italic leading-relaxed">
+        As informações registradas no SISC são protegidas pelo sigilo profissional e pela Lei Geral de Proteção de Dados (LGPD — Lei nº 13.709/2018). O acesso é restrito aos perfis autorizados, e todo o registro é auditável. O uso indevido constitui violação ética e legal.
+      </p>
+    </div>
+
+    <div class="grid grid-cols-1 md:grid-cols-2 gap-5">
+      <FeatureCard
+        title="Conceito do SCFV"
+        description="O que é o Serviço de Convivência e Fortalecimento de Vínculos, sua finalidade, eixos norteadores, público-alvo e grupos."
+        accent="blue"
+        icon="BookOpen"
+        badge="Conceito"
+      />
+      <FeatureCard
+        title="Registro e Financiamento"
+        description="Como o SCFV é registrado no SISC e financiado pelo cofinanciamento federal via Piso Básico Variável (PBV)."
+        accent="green"
+        icon="Target"
+        badge="Gestão"
+      />
+    </div>
+    <div class="grid grid-cols-1 md:grid-cols-2 gap-5 mt-5">
+      <FeatureCard
+        title="Manual do SISC"
+        description="Tutoriais passo a passo dos menus Grupos, Usuários e Relatórios, com todas as capturas de tela do sistema."
+        accent="purple"
+        icon="Users"
+        badge="Tutorial"
+      />
+      <FeatureCard
+        title="Legislação e Anexos"
+        description="Base normativa federal do SCFV e materiais de apoio: checklist, regras de ouro e dúvidas recorrentes."
+        accent="amber"
+        icon="ShieldCheck"
+        badge="Normativa"
+      />
+    </div>
+
+    <div class="mt-8">
+      <AlertBox variant="info" title="Fonte das capturas de tela">
+        As ilustrações utilizadas neste guia são as capturas de tela do Manual do SISC (Secretaria Nacional de Assistência Social — SNAS/MDS). O layout do sistema foi atualizado para o padrão gov.br em 2025; a organização dos menus e das funcionalidades permanece a mesma.
+      </AlertBox>
+    </div>
+  </div>
+</section>

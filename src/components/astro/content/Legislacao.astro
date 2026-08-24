@@ -1,0 +1,74 @@
+---
+// Bloco 3 — Legislação e Normativas Federais
+import SectionHeader from '@/components/astro/layout/SectionHeader.astro'
+import InfoCard from '@/components/astro/content/InfoCard.astro'
+
+const leis = [
+  {
+    ref: 'Constituição Federal / LOAS (Lei nº 8.742/1993)',
+    desc: 'Base jurídica da assistência social como política pública de seguridade social, além do reconhecimento da proteção social e da defesa de direitos.',
+  },
+  {
+    ref: 'PNAS (2004) e NOB-SUAS (2012)',
+    desc: 'Política Nacional de Assistência Social e Norma Operacional Básica do SUAS, que estruturam a oferta dos serviços da Proteção Social Básica.',
+  },
+  {
+    ref: 'Resolução CNAS nº 109/2009',
+    desc: 'Aprova a Tipificação Nacional dos Serviços Socioassistenciais, que define o SCFV, seus objetivos, público-alvo, provisões e aquisições.',
+  },
+  {
+    ref: 'Resolução CIT nº 01/2013 e CNAS nº 01/2013',
+    desc: 'Dispõem sobre o Reordenamento do SCFV no âmbito do SUAS, ajustando critérios de partilha do cofinanciamento e a oferta por faixas etárias.',
+  },
+  {
+    ref: 'Resolução CNAS nº 17/2011',
+    desc: 'Ratifica a equipe de referência definida pela NOB-RH/SUAS e reconhece as categorias profissionais de nível superior dos serviços socioassistenciais.',
+  },
+  {
+    ref: 'Resolução CNAS nº 13/2014',
+    desc: 'Trata da inclusão de usuários de 18 a 59 anos no SCFV, seus objetivos e as aquisições a serem alcançadas.',
+  },
+  {
+    ref: 'Portaria MDS nº 134/2013',
+    desc: 'Dispõe sobre o cofinanciamento federal do SCFV e o registro da participação dos usuários no SISC, incluindo a aferição trimestral.',
+  },
+  {
+    ref: 'Portaria MDS nº 177/2011',
+    desc: 'Define procedimentos para a gestão do Cadastro Único (CadÚnico), inclusive a atribuição do NIS aos usuários.',
+  },
+  {
+    ref: 'Portaria MDS nº 1.068/2025',
+    desc: 'Estabelece regras excepcionais de garantia de repasses durante a recomposição do SISC (2025), mantendo o preenchimento obrigatório.',
+  },
+]
+---
+
+<section id="normativas-federais" class="animate-fade-in bg-white dark:bg-slate-800 shadow-md rounded-xl p-6 md:p-10 print:shadow-none print:rounded-none space-y-6">
+  <SectionHeader number="3.1" title="Leis e Normativas Federais" accent="cyan"
+    subtitle="Base legal e referencial do Serviço de Convivência e Fortalecimento de Vínculos" />
+
+  <p class="text-slate-700 dark:text-slate-300 leading-relaxed">
+    O SCFV está ancorado no marco legal da assistência social e em normativas específicas do Sistema Único de Assistência Social (SUAS). As principais referências federais são:
+  </p>
+
+  <div class="space-y-3">
+    {leis.map((l) => (
+      <div class="flex flex-col md:flex-row gap-3 p-4 rounded-lg border border-slate-200 dark:border-slate-700 bg-slate-50 dark:bg-slate-700/30">
+        <span class="md:w-64 flex-shrink-0 font-semibold text-institucional-blue dark:text-slate-200 text-sm">{l.ref}</span>
+        <span class="text-sm text-slate-700 dark:text-slate-300 leading-relaxed">{l.desc}</span>
+      </div>
+    ))}
+  </div>
+
+  <div class="grid grid-cols-1 md:grid-cols-3 gap-4 mt-2">
+    <InfoCard title="SUAS" accent="blue">
+      <p class="text-sm">Sistema Único de Assistência Social — modelo de gestão da política de assistência social, de natureza não contributiva e caráter universal.</p>
+    </InfoCard>
+    <InfoCard title="CRAS" accent="green">
+      <p class="text-sm">Centro de Referência de Assistência Social — unidade pública da Proteção Social Básica, porta de entrada para os usuários do SCFV.</p>
+    </InfoCard>
+    <InfoCard title="PAIF e SCFV" accent="purple">
+      <p class="text-sm">O SCFV complementa o trabalho social com famílias do PAIF, atuando de forma articulada no mesmo território.</p>
+    </InfoCard>
+  </div>
+</section>

@@ -1,0 +1,166 @@
+---
+// Bloco 1 — O Serviço de Convivência e Fortalecimento de Vínculos (SCFV)
+// Seções conceituais: o que é, finalidade, eixos norteadores, público, grupos, equipe técnica
+import SectionHeader from '@/components/astro/layout/SectionHeader.astro'
+import InfoCard from '@/components/astro/content/InfoCard.astro'
+import AlertBox from '@/components/astro/content/AlertBox.astro'
+---
+
+<section id="o-que-e-scfv" class="animate-fade-in bg-white dark:bg-slate-800 shadow-md rounded-xl p-6 md:p-10 print:shadow-none print:rounded-none space-y-6">
+  <SectionHeader number="1.1" title="O que é o SCFV ?" accent="blue"
+    subtitle="Serviço de Convivência e Fortalecimento de Vínculos — oferta da Proteção Social Básica do SUAS" />
+
+  <p class="text-slate-700 dark:text-slate-300 leading-relaxed">
+    O <strong>Serviço de Convivência e Fortalecimento de Vínculos (SCFV)</strong> é um serviço socioassistencial ofertado pela <strong>Proteção Social Básica</strong> do Sistema Único de Assistência Social (SUAS). Conforme a <em>Tipificação Nacional dos Serviços Socioassistenciais</em> (Resolução CNAS nº 109/2009), o SCFV é um serviço:</p>
+
+  <blockquote class="border-l-4 border-institucional-blue pl-4 italic text-slate-600 dark:text-slate-400">
+    "realizado em grupos, organizado a partir de percursos, de modo a garantir aquisições progressivas aos seus usuários, de acordo com o seu ciclo de vida, a fim de complementar o trabalho social com famílias e prevenir a ocorrência de situações de risco social."
+  </blockquote>
+
+  <div class="grid grid-cols-1 md:grid-cols-3 gap-4">
+    <InfoCard title="Realizado em grupos" accent="blue">
+      <p class="text-sm">O atendimento é voltado à convivência dentro de grupos, por faixa etária, com intencionalidade educativa e socioassistencial.</p>
+    </InfoCard>
+    <InfoCard title="Garante aquisições progressivas" accent="green">
+      <p class="text-sm">As atividades seguem percursos planejados para que os usuários conquistem novas aquisições e capacidades ao longo do tempo.</p>
+    </InfoCard>
+    <InfoCard title="Prevenção e complementariedade" accent="purple">
+      <p class="text-sm">Complementa o trabalho social com famílias e previne situações de risco e vulnerabilidade social.</p>
+    </InfoCard>
+  </div>
+
+  <AlertBox variant="info" title="Onde é ofertado">
+    O SCFV pode ser ofertado nos <strong>CRAS</strong>, em unidades públicas ou em organizações da sociedade civil (entidades não governamentais), desde que referenciadas ao CRAS do território.
+  </AlertBox>
+</section>
+
+<section id="finalidade-scfv" class="animate-fade-in bg-white dark:bg-slate-800 shadow-md rounded-xl p-6 md:p-10 print:shadow-none print:rounded-none space-y-6">
+  <SectionHeader number="1.2" title="Qual Sua Finalidade ?" accent="green"
+    subtitle="Prevenir riscos e fortalecer a convivência familiar e comunitária" />
+
+  <p class="text-slate-700 dark:text-slate-300 leading-relaxed">
+    O SCFV tem <strong>caráter preventivo e proativo</strong>, pautado na defesa e afirmação de direitos e no desenvolvimento de capacidades e potencialidades dos usuários, com vistas ao alcance de alternativas emancipatórias para o enfrentamento das vulnerabilidades sociais.
+  </p>
+
+  <h3 class="text-lg font-bold text-slate-800 dark:text-white mt-2">Objetivos gerais</h3>
+  <ul class="grid grid-cols-1 md:grid-cols-2 gap-3 text-sm text-slate-700 dark:text-slate-300">
+    <li class="flex items-start gap-2"><span class="text-institucional-green font-bold mt-0.5">•</span> Complementar o trabalho social com famílias, prevenindo situações de risco social; fortalecendo a convivência familiar e comunitária.</li>
+    <li class="flex items-start gap-2"><span class="text-institucional-green font-bold mt-0.5">•</span> Prevenir a institucionalização e a segregação de crianças, adolescentes, jovens e pessoas idosas, assegurando o direito à convivência.</li>
+    <li class="flex items-start gap-2"><span class="text-institucional-green font-bold mt-0.5">•</span> Promover acessos a benefícios e serviços socioassistenciais, fortalecendo a rede de proteção social nos territórios.</li>
+    <li class="flex items-start gap-2"><span class="text-institucional-green font-bold mt-0.5">•</span> Promover o acesso a serviços setoriais (educação, saúde, cultura, esporte e lazer), contribuindo para o usufruto dos demais direitos.</li>
+    <li class="flex items-start gap-2"><span class="text-institucional-green font-bold mt-0.5">•</span> Oportunizar o acesso a informações sobre direitos e participação cidadã, estimulando o protagonismo dos usuários.</li>
+    <li class="flex items-start gap-2"><span class="text-institucional-green font-bold mt-0.5">•</span> Possibilitar experiências artísticas, culturais, esportivas e de lazer para o desenvolvimento de novas sociabilidades.</li>
+    <li class="flex items-start gap-2"><span class="text-institucional-green font-bold mt-0.5">•</span> Favorecer atividades intergeracionais, fortalecendo o respeito, a solidariedade e os vínculos familiares e comunitários.</li>
+  </ul>
+
+  <p class="text-sm text-slate-600 dark:text-slate-400">Assegura as seguranças de <strong>acolhida</strong> e de <strong>convívio familiar e comunitário</strong>, além de estimular o desenvolvimento da <strong>autonomia</strong> dos usuários.</p>
+</section>
+
+<section id="eixos-norteadores" class="animate-fade-in bg-white dark:bg-slate-800 shadow-md rounded-xl p-6 md:p-10 print:shadow-none print:rounded-none space-y-6">
+  <SectionHeader number="1.3" title="Quais são os Eixos Norteadores ?" accent="purple"
+    subtitle="Temas comuns que guiam a construção dos percursos em todos os ciclos de vida" />
+
+  <p class="text-slate-700 dark:text-slate-300 leading-relaxed">
+    Os eixos norteadores atravessam os percursos do SCFV e são adaptados a cada faixa etária, garantindo a expressão das singularidades e a participação dos usuários. São três eixos essenciais:
+  </p>
+
+  <div class="grid grid-cols-1 md:grid-cols-3 gap-4">
+    <InfoCard title="1. Convivência Social" accent="blue">
+      <p class="text-sm">Fomento do convívio entre pares, intergeracional e familiar-comunitário, promovendo trocas e o desenvolvimento de habilidades sociais e afetivas.</p>
+    </InfoCard>
+    <InfoCard title="2. Direito de Ser" accent="green">
+      <p class="text-sm">Afirmação da identidade, singularidade e potencialidades do sujeito, reconhecendo e valorizando a diferença e a ressignificação de histórias de vida.</p>
+    </InfoCard>
+    <InfoCard title="3. Participação" accent="purple">
+      <p class="text-sm">Estímulo à participação cidadã e ao protagonismo, favorecendo a compreensão crítica da realidade e a participação na vida pública do território.</p>
+    </InfoCard>
+  </div>
+
+  <AlertBox variant="info" title="Eixos específicos por ciclo de vida">
+    Além dos eixos comuns, a Tipificação prevê ênfases específicas, como a <strong>autonomia e protagonismo</strong> para as pessoas idosas, e a <strong>preparação para o mundo do trabalho</strong> para adolescentes e jovens.
+  </AlertBox>
+</section>
+
+<section id="publico-alvo" class="animate-fade-in bg-white dark:bg-slate-800 shadow-md rounded-xl p-6 md:p-10 print:shadow-none print:rounded-none space-y-6">
+  <SectionHeader number="1.4" title="Para quem é feito o SCFV ?" accent="amber"
+    subtitle="Organização por faixa etária e situações prioritárias" />
+
+  <p class="text-slate-700 dark:text-slate-300 leading-relaxed">
+    O SCFV é organizado por <strong>ciclos de vida</strong>, atendendo pessoas de todas as faixas etárias que vivenciem situações de vulnerabilidade ou risco social:
+  </p>
+
+  <div class="overflow-x-auto">
+    <table class="w-full text-sm text-left border border-slate-200 dark:border-slate-700">
+      <thead class="bg-institucional-lightBlue dark:bg-slate-700">
+        <tr>
+          <th class="p-3 font-semibold text-institucional-blue dark:text-slate-200">Faixa etária</th>
+          <th class="p-3 font-semibold text-institucional-blue dark:text-slate-200">Enfoque do serviço</th>
+          <th class="p-3 font-semibold text-institucional-blue dark:text-slate-200">Periodicidade indicativa</th>
+        </tr>
+      </thead>
+      <tbody class="divide-y divide-slate-200 dark:divide-slate-700">
+        <tr><td class="p-3 font-medium">0 a 6 anos (e famílias)</td><td class="p-3">Segurança de convívio, desenvolvimento da autonomia e fortalecimento de vínculos familiares.</td><td class="p-3">Diária</td></tr>
+        <tr><td class="p-3 font-medium">6 a 15 anos</td><td class="p-3">Participação na vida pública, compreensão crítica da realidade e permanência na escola.</td><td class="p-3">3 encontros semanais (~4h)</td></tr>
+        <tr><td class="p-3 font-medium">15 a 17 anos</td><td class="p-3">Fortalecimento da convivência, participação cidadã e formação geral para o mundo do trabalho.</td><td class="p-3">3 encontros semanais (~3h)</td></tr>
+        <tr><td class="p-3 font-medium">18 a 29 anos</td><td class="p-3">Convívio grupal e comunitário, ampliação do universo informacional, cultural e novos projetos de vida.</td><td class="p-3">Semanal</td></tr>
+        <tr><td class="p-3 font-medium">30 a 59 anos</td><td class="p-3">Convívio comunitário, autonomia, desenvolvimento de potencialidades e preventivo.</td><td class="p-3">Semanal</td></tr>
+        <tr><td class="p-3 font-medium">Pessoa idosa (60+)</td><td class="p-3">Envelhecimento ativo e saudável, prevenção de vulnerabilidades, autonomia e sociabilidade.</td><td class="p-3">Diária, semanal ou quinzenal</td></tr>
+      </tbody>
+    </table>
+  </div>
+
+  <div class="p-4 rounded-lg bg-amber-50 dark:bg-amber-950 border border-amber-300 dark:border-amber-700">
+    <h3 class="font-bold text-amber-800 dark:text-amber-300 mb-2">Situações prioritárias (Resolução CNAS nº 01/2013)</h3>
+    <p class="text-sm text-amber-900 dark:text-amber-200">Têm prioridade de ingresso no SCFV os usuários que vivenciem: <strong>isolamento; trabalho infantil; vivência de violência e/ou negligência; fora da escola ou com defasagem escolar superior a 2 anos; acolhimento; cumprimento de medida socioeducativa em meio aberto; egressos de medidas socioeducativas; situação de abuso e/ou exploração sexual; medidas de proteção do ECA (art. 101); crianças e adolescentes em situação de rua; vulnerabilidade de pessoas com deficiência</strong>.</p>
+  </div>
+</section>
+
+<section id="grupos-desenvolvidos" class="animate-fade-in bg-white dark:bg-slate-800 shadow-md rounded-xl p-6 md:p-10 print:shadow-none print:rounded-none space-y-6">
+  <SectionHeader number="1.5" title="O que é Desenvolvido Nos Grupos ?" accent="cyan"
+    subtitle="Percursos socioeducativos e atividades de convivência" />
+
+  <p class="text-slate-700 dark:text-slate-300 leading-relaxed">
+    Nos grupos do SCFV são desenvolvidas atividades socioeducativas, planejadas em <strong>percursos</strong> a partir da faixa etária, dos interesses e das vulnerabilidades identificadas. As atividades vão além das oficinas: integram um processo contínuo e com intencionalidade.
+  </p>
+
+  <div class="grid grid-cols-1 md:grid-cols-2 gap-4">
+    <InfoCard title="Rodas de conversa" accent="blue">
+      <p class="text-sm">Temáticas como direitos, cultura de paz, relações de gênero, diversidade, autocuidado, prevenção ao uso de álcool e outras drogas e cidadania.</p>
+    </InfoCard>
+    <InfoCard title="Oficinas socioeducativas" accent="green">
+      <p class="text-sm">Arte, cultura, música, esporte, lazer, tecnologia e integração ao mundo do trabalho — como estratégias de atratividade que sustentam o trabalho de fortalecimento de vínculos.</p>
+    </InfoCard>
+    <InfoCard title="Atividades intergeracionais" accent="purple">
+      <p class="text-sm">Trocas de experiências entre gerações, fortalecendo respeito, solidariedade e vínculos familiares e comunitários.</p>
+    </InfoCard>
+    <InfoCard title="Acompanhamento e encaminhamentos" accent="orange">
+      <p class="text-sm">Acolhida, orientação, encaminhamentos à rede socioassistencial e intersetorial, e participação no planejamento e evolução do acompanhamento.</p>
+    </InfoCard>
+  </div>
+
+  <AlertBox variant="info" title="Complementariedade ao PAIF">
+    O SCFV complementa o trabalho social com famílias realizado pelo <strong>PAIF</strong> (CRAS). As oficinas não são um fim em si mesmas: integram percursos socioeducativos planejados pela equipe técnica.
+  </AlertBox>
+</section>
+
+<section id="equipe-tecnica" class="animate-fade-in bg-white dark:bg-slate-800 shadow-md rounded-xl p-6 md:p-10 print:shadow-none print:rounded-none space-y-6">
+  <SectionHeader number="1.6" title="Quais São as Equipes ?" accent="pink"
+    subtitle="Equipe de referência conforme a NOB-RH/SUAS e Resolução CNAS nº 17/2011" />
+
+  <p class="text-slate-700 dark:text-slate-300 leading-relaxed">
+    A equipe de referência do SCFV é composta por profissionais que atuam diretamente na execução do serviço, conforme a <em>Norma Operacional Básica de Recursos Humanos do SUAS (NOB-RH/SUAS)</em>:
+  </p>
+
+  <div class="grid grid-cols-1 md:grid-cols-2 gap-4">
+    <InfoCard title="Técnico de referência" accent="blue">
+      <p class="text-sm">Profissional de <strong>nível superior</strong> (assistente social, psicólogo ou outro profissional do CRAS, conforme a Resolução CNAS nº 17/2011), que é referência aos grupos do SCFV, participando do planejamento e assessoramento ao orientador social.</p>
+    </InfoCard>
+    <InfoCard title="Orientador / Educador social" accent="green">
+      <p class="text-sm">Profissional responsável pela condução direta dos grupos e atividades, com nível de formação compatível (em geral nível médio ou superior, conforme ocupações do SUAS — Resolução CNAS nº 9/2014).</p>
+    </InfoCard>
+  </div>
+
+  <AlertBox variant="info" title="Papel dos profissionais">
+    O educador/orientador social conduz as atividades do grupo, enquanto o técnico de referência articula o serviço com o acompanhamento familiar, a rede socioassistencial e os serviços setoriais, assegurando a intencionalidade socioeducativa e a matricialidade do SUAS.
+  </AlertBox>
+</section>

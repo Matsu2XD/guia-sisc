@@ -1,0 +1,99 @@
+---
+// Anexos do Guia do SISC
+import SectionHeader from '@/components/astro/layout/SectionHeader.astro'
+import ComparisonTable from '@/components/astro/content/ComparisonTable.astro'
+import GoldenRulesGrid from '@/components/astro/content/GoldenRulesGrid.astro'
+import AlertBox from '@/components/astro/content/AlertBox.astro'
+import ChecklistGrid from '@/components/react/content/ChecklistGrid'
+import { resumoVisualSisc } from '@/data/resumoVisual'
+import { regrasOuroSisc } from '@/data/regrasOuro'
+import { checklistSisc } from '@/data/checklist'
+
+const duvidas = [
+  { p: 'O que é o SISC?', r: 'É o Sistema de Informações do Serviço de Convivência e Fortalecimento de Vínculos (SCFV), ferramenta de gestão nacional vinculada à Rede SUAS, na qual o gestor registra grupos, vínculo de usuários e confirmação de participação.' },
+  { p: 'Quem alimenta o SISC?', r: 'O responsável pelo registro é o gestor municipal (ou do DF) do SISC, designado pelo órgão gestor. Os dados são extraídos do CadÚnico e do CadSUAS.' },
+  { p: 'Quando devo confirmar a participação dos usuários?', r: 'Até o dia 20 do último mês de cada trimestre, conforme a Portaria MDS nº 134/2013. O registro pode ser feito mensalmente.' },
+  { p: 'Um usuário sem NIS pode ser cadastrado?', r: 'Sim, por meio do cadastro provisório, válido por até 3 meses. Após o prazo, o cadastro expira e deixa de contar para o cofinanciamento; é preciso efetivá-lo com o NIS.' },
+  { p: 'O que são cadastros provisórios expirados?', r: 'São usuários cadastrados provisoriamente há mais de 3 meses. Eles não entram no cálculo do cofinanciamento e podem ser efetivados (informando o NIS) ou desvinculados.' },
+  { p: 'O grupo pode ser excluído?', r: 'Não. Uma vez incluído, o grupo é desativado (não excluído), após a desvinculação de todos os usuários.' },
+  { p: 'Posso alterar a faixa etária do grupo?', r: 'Não. A faixa etária é definida na criação e não pode ser alterada. Avalie com atenção antes de incluir.' },
+  { p: 'Usuários de 18 a 59 anos podem ser registrados?', r: 'Sim (Resolução CNAS nº 13/2014), porém a oferta para essa faixa não conta com cofinanciamento federal e o sistema emite aviso ao criar grupos dessa faixa.' },
+  { p: 'O que acontece se eu não preencher o SISC?', r: 'O não cumprimento pode resultar em bloqueio ou suspensão do cofinanciamento federal do SCFV. O preenchimento é obrigatório para municípios cofinanciados.' },
+  { p: 'Como acesso o SISC?', r: 'Pelo SAA (http://aplicacoes.mds.gov.br/saa-web) ou diretamente em http://aplicacoes.mds.gov.br/sisc, com CPF e senha de acesso.' },
+]
+---
+
+<!-- ============ RESUMO PODE / NÃO PODE ============ -->
+<section id="resumo-visual" class="animate-fade-in bg-white dark:bg-slate-800 shadow-md rounded-xl p-6 md:p-10 print:shadow-none print:rounded-none space-y-6">
+  <SectionHeader number="A.1" title="O que pode e o que não pode no SISC ?" accent="amber"
+    subtitle="Práticas orientadoras para o registro no SISC" />
+  <ComparisonTable rows={resumoVisualSisc} />
+</section>
+
+<!-- ============ CHECKLIST ============ -->
+<section id="checklist-sisc" class="animate-fade-in bg-white dark:bg-slate-800 shadow-md rounded-xl p-6 md:p-10 print:shadow-none print:rounded-none space-y-6">
+  <SectionHeader number="A.2" title="Checklist do SISC" accent="blue"
+    subtitle="Roteiro para o registro e o acompanhamento do SCFV no SISC" />
+  <p class="text-sm text-slate-600 dark:text-slate-400">
+    Utilize este checklist para conferir os procedimentos essenciais de registro do SCFV no sistema.
+  </p>
+  <ChecklistGrid client:load items={checklistSisc} />
+</section>
+
+<!-- ============ BASE NORMATIVA ============ -->
+<section id="base-normativa" class="animate-fade-in bg-white dark:bg-slate-800 shadow-md rounded-xl p-6 md:p-10 print:shadow-none print:rounded-none space-y-6">
+  <SectionHeader number="A.3" title="Base Normativa do SCFV e do SISC" accent="green"
+    subtitle="Referências legais e normativas do serviço" />
+  <ul class="space-y-3 text-sm text-slate-700 dark:text-slate-300">
+    <li><span class="font-semibold text-institucional-blue">Resolução CNAS nº 109/2009</span> — Tipificação Nacional dos Serviços Socioassistenciais (define o SCFV).</li>
+    <li><span class="font-semibold text-institucional-blue">Resolução CNAS nº 17/2011</span> — equipe de referência do SUAS (NOB-RH) e categorias profissionais.</li>
+    <li><span class="font-semibold text-institucional-blue">Resolução CIT nº 01/2013 e CNAS nº 01/2013</span> — Reordenamento do SCFV.</li>
+    <li><span class="font-semibold text-institucional-blue">Resolução CNAS nº 13/2014</span> — inclusão de usuários de 18 a 59 anos no SCFV.</li>
+    <li><span class="font-semibold text-institucional-blue">Portaria MDS nº 134/2013</span> — cofinanciamento federal e registro da participação no SISC.</li>
+    <li><span class="font-semibold text-institucional-blue">Portaria MDS nº 177/2011</span> — gestão do Cadastro Único (CadÚnico) e atribuição do NIS.</li>
+    <li><span class="font-semibold text-institucional-blue">Portaria MDS nº 1.068/2025</span> — regras excepcionais de repasses durante a recomposição do SISC.</li>
+    <li><span class="font-semibold text-institucional-blue">Lei nº 8.742/1993 (LOAS)</span> e <span class="font-semibold text-institucional-blue">PNAS (2004)</span> — base legal da assistência social.</li>
+  </ul>
+</section>
+
+<!-- ============ REGRAS DE OURO ============ -->
+<section id="regras-ouro" class="animate-fade-in bg-white dark:bg-slate-800 shadow-md rounded-xl p-6 md:p-10 print:shadow-none print:rounded-none space-y-6">
+  <SectionHeader number="A.4" title="Regras de Ouro do Registro no SISC" accent="purple"
+    subtitle="Boas práticas essenciais para a gestão do SCFV" />
+  <GoldenRulesGrid rules={regrasOuroSisc} />
+</section>
+
+<!-- ============ DÚVIDAS RECORRENTES ============ -->
+<section id="duvidas-recorrentes" class="animate-fade-in bg-white dark:bg-slate-800 shadow-md rounded-xl p-6 md:p-10 print:shadow-none print:rounded-none space-y-6">
+  <SectionHeader number="A.5" title="Dúvidas Recorrentes" accent="cyan"
+    subtitle="Perguntas frequentes sobre o SISC e o SCFV" />
+  <div class="space-y-3">
+    {duvidas.map((d, i) => (
+      <details class="group rounded-lg border border-slate-200 dark:border-slate-700 bg-slate-50 dark:bg-slate-700/30">
+        <summary class="flex items-center gap-2 p-4 cursor-pointer text-sm font-semibold text-slate-800 dark:text-slate-200 list-none">
+          <span class="text-institucional-blue">{i + 1}.</span>
+          {d.p}
+          <svg class="ml-auto w-4 h-4 text-slate-400 group-open:rotate-180 transition-transform" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2" stroke-linecap="round" stroke-linejoin="round"><polyline points="6 9 12 15 18 9"/></svg>
+        </summary>
+        <div class="px-4 pb-4 text-sm text-slate-600 dark:text-slate-300 leading-relaxed">{d.r}</div>
+      </details>
+    ))}
+  </div>
+</section>
+
+<!-- ============ INFORMAÇÕES COMPLEMENTARES ============ -->
+<section id="informacoes-complementares" class="animate-fade-in bg-white dark:bg-slate-800 shadow-md rounded-xl p-6 md:p-10 print:shadow-none print:rounded-none space-y-6">
+  <SectionHeader number="A.6" title="Informações Complementares" accent="slate"
+    subtitle="Orientações adicionais e contato" />
+  <div class="grid grid-cols-1 md:grid-cols-2 gap-4">
+    <AlertBox variant="info" title="Documentação comprobatória">
+      As situações prioritárias dos usuários devem ser comprovadas por meio de documentos técnicos elaborados a partir dos atendimentos.
+    </AlertBox>
+    <AlertBox variant="warning" title="Supervisão e monitoramento">
+      É importante elaborar listagens de grupos e usuários e manter a guarda dos registros trimestrais, para fins de prestação de contas e continuidade da oferta.
+    </AlertBox>
+  </div>
+  <p class="text-sm text-slate-600 dark:text-slate-400 mt-2">
+    Em caso de dúvidas sobre o preenchimento, contate a Coordenação-Geral do SCFV (DPSB/SNAS/MDS) pelo e-mail <span class="font-medium">servicosdeconvivencia@mds.gov.br</span>.
+  </p>
+</section>

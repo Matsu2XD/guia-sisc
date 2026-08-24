@@ -1,0 +1,53 @@
+---
+import BaseLayout from '@/layouts/BaseLayout.astro'
+import Sidebar from '@/components/astro/layout/Sidebar.astro'
+import ScrollToTop from '@/components/react/layout/ScrollToTop'
+import BlockAccordion from '@/components/react/layout/BlockAccordion'
+import { WelcomeModal } from '@/components/react/layout/WelcomeModal'
+
+import Capa from '@/components/astro/capitulos/Capa.astro'
+import Expediente from '@/components/astro/capitulos/Expediente.astro'
+import Sumario from '@/components/astro/capitulos/Sumario.astro'
+import Apresentacao from '@/components/astro/capitulos/Apresentacao.astro'
+import ContraCapa from '@/components/astro/capitulos/ContraCapa.astro'
+
+import AssessoramentoScfv from '@/components/astro/content/AssessoramentoScfv.astro'
+import ConceitosScfv from '@/components/astro/content/ConceitosScfv.astro'
+import RegistroFinanciamento from '@/components/astro/content/RegistroFinanciamento.astro'
+import Legislacao from '@/components/astro/content/Legislacao.astro'
+import ManualSiscTutorials from '@/components/astro/content/ManualSiscTutorials.astro'
+import AnexosScfv from '@/components/astro/content/AnexosScfv.astro'
+---
+
+<BaseLayout>
+  <Sidebar />
+  <ScrollToTop client:idle />
+  <BlockAccordion client:idle />
+  <WelcomeModal client:load />
+
+  <div id="main-content" data-pagefind-body class="max-w-4xl mx-auto my-8 px-4 md:px-8 space-y-4 md:space-y-6">
+    <Capa />
+    <Expediente />
+    <Sumario />
+    <Apresentacao />
+
+    <AssessoramentoScfv />
+
+    <!-- BLOCO 1: O SCFV -->
+    <ConceitosScfv />
+
+    <!-- BLOCO 2: Registro e Financiamento -->
+    <RegistroFinanciamento />
+
+    <!-- BLOCO 3: Legislação -->
+    <Legislacao />
+
+    <!-- BLOCO 4: Manual do SISC -->
+    <ManualSiscTutorials />
+
+    <!-- Anexos -->
+    <AnexosScfv />
+
+    <ContraCapa />
+  </div>
+</BaseLayout>

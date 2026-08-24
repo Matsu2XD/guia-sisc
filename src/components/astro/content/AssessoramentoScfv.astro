@@ -1,0 +1,52 @@
+---
+// Seções de apoio (Assessoramento)
+import SectionHeader from '@/components/astro/layout/SectionHeader.astro'
+import InfoCard from '@/components/astro/content/InfoCard.astro'
+import AlertBox from '@/components/astro/content/AlertBox.astro'
+---
+
+<section id="introducao-scfv" class="animate-fade-in bg-white dark:bg-slate-800 shadow-md rounded-xl p-6 md:p-10 print:shadow-none print:rounded-none space-y-6">
+  <SectionHeader title="Introdução ao SCFV" accent="blue"
+    subtitle="O contexto do serviço na Proteção Social Básica do SUAS" />
+
+  <p class="text-slate-700 dark:text-slate-300 leading-relaxed">
+    O <strong>Serviço de Convivência e Fortalecimento de Vínculos (SCFV)</strong> integra a Proteção Social Básica do SUAS, ofertado nos CRAS ou em unidades/entidades a eles referenciadas. Possui caráter preventivo e proativo, voltado ao fortalecimento de vínculos e ao desenvolvimento de capacidades dos usuários, organizado por ciclos de vida.
+  </p>
+
+  <div class="grid grid-cols-1 md:grid-cols-3 gap-4">
+    <InfoCard title="Origem" accent="blue">
+      <p class="text-sm">Surgiu com as jornadas complementares do Programa de Enfrentamento ao Trabalho Infantil (PETI) e foi reordenado em 2013 (Resoluções CIT 01/2013 e CNAS 01/2013).</p>
+    </InfoCard>
+    <InfoCard title="Caráter preventivo" accent="green">
+      <p class="text-sm">Antecipa-se às situações de risco e vulnerabilidade, a partir dos ciclos de vida e das demandas dos territórios.</p>
+    </InfoCard>
+    <InfoCard title="Complementariedade" accent="purple">
+      <p class="text-sm">Complementa o trabalho social com famílias realizado pelo PAIF, atuando de forma articulada no mesmo território.</p>
+    </InfoCard>
+  </div>
+</section>
+
+<section id="relacao-sisc-scfv" class="animate-fade-in bg-white dark:bg-slate-800 shadow-md rounded-xl p-6 md:p-10 print:shadow-none print:rounded-none space-y-6">
+  <SectionHeader title="SISC e o SCFV" accent="green"
+    subtitle="O papel do sistema de informações na gestão do serviço" />
+
+  <p class="text-slate-700 dark:text-slate-300 leading-relaxed">
+    O <strong>SISC — Sistema de Informações do Serviço de Convivência e Fortalecimento de Vínculos</strong> foi criado pelo MDS para facilitar o acompanhamento e a gestão do SCFV. Suas funcionalidades estão organizadas em módulos — Grupos, Usuários e Relatórios — para apoiar a gerência dos usuários e dos grupos do serviço, além de produzir relatórios que mostram a situação dos usuários em cada CRAS.
+  </p>
+
+  <div class="grid grid-cols-1 md:grid-cols-3 gap-4">
+    <InfoCard title="Grupos" accent="blue">
+      <p class="text-sm">Incluir, consultar, alterar, vincular usuários, ativar/desativar e consultar o histórico dos grupos do SCFV.</p>
+    </InfoCard>
+    <InfoCard title="Usuários" accent="green">
+      <p class="text-sm">Consultar, cadastrar provisoriamente, vincular, desvincular, alterar situação, confirmar participação e efetivar cadastros.</p>
+    </InfoCard>
+    <InfoCard title="Relatórios" accent="purple">
+      <p class="text-sm">Relatório Principal, de Situações Prioritárias e de Confirmação de Participação, para o acompanhamento do serviço.</p>
+    </InfoCard>
+  </div>
+
+  <AlertBox variant="info" title="Gestão municipal">
+    O responsável pelo preenchimento e pela manutenção dos dados no SISC é o gestor municipal (ou do DF), que também realiza a confirmação da participação dos usuários no serviço.
+  </AlertBox>
+</section>

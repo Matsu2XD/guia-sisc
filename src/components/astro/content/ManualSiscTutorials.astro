@@ -1,0 +1,995 @@
+---
+// Bloco 4 — Manual do SISC
+// Tutoriais organizados por capítulo, com todas as capturas de tela do manual
+import SectionHeader from '@/components/astro/layout/SectionHeader.astro'
+import SecaoTutorialCarousel from '@/components/astro/capitulos/SecaoTutorialCarousel.astro'
+import AlertBox from '@/components/astro/content/AlertBox.astro'
+import type { Anotacao } from '@/types'
+
+// Auxiliar de anotação
+function anotacoes(items: string[]): Anotacao[] {
+  return items.map((t, i) => ({ numero: i + 1, texto: t }))
+}
+
+// ------------------------- 3. ACESSO AO SISTEMA -------------------------
+const acessoCarousel = [
+  {
+    screenshotSrc: '/assets/sisc/screenshots/p05_4.webp',
+    paginaFisica: 5,
+    tituloPagina: 'Login no SAA',
+    anotacoes: anotacoes([
+      '<strong>Campo Usuário</strong> — informe o login (CPF).',
+      '<strong>Campo Senha</strong> — informe a senha de acesso.',
+      '<strong>Botão Acessar</strong> — acione para realizar a autenticação.',
+    ]),
+    textoExplicativo: 'Na barra de endereço, digite http://aplicacoes.mds.gov.br/saa-web e pressione ENTER. A primeira tela exibida é a de login do Sistema de Autenticação e Autorização (SAA). Preencha Usuário e Senha e clique em Acessar.',
+  },
+  {
+    screenshotSrc: '/assets/sisc/screenshots/p05_5.webp',
+    paginaFisica: 5,
+    tituloPagina: 'Tela inicial do SAA',
+    anotacoes: anotacoes([
+      '<strong>Lista de sistemas</strong> — são exibidos todos os sistemas cadastrados para o seu perfil.',
+      '<strong>SISC</strong> — clique no nome do sistema para acessá-lo.',
+    ]),
+    textoExplicativo: 'Após o login, a tela inicial do SAA lista os sistemas disponíveis. Para acessar o SISC, basta clicar em seu nome.',
+  },
+  {
+    screenshotSrc: '/assets/sisc/screenshots/p06_4.webp',
+    paginaFisica: 6,
+    tituloPagina: 'Login direto no SISC',
+    anotacoes: anotacoes([
+      '<strong>CPF</strong> — informe o CPF de acesso ao SAA.',
+      '<strong>Senha</strong> — informe a senha de acesso.',
+      '<strong>Botão Enviar</strong> — acione para entrar no SISC.',
+    ]),
+    textoExplicativo: 'O SISC também pode ser acessado pelo endereço direto http://aplicacoes.mds.gov.br/sisc. Na tela de login, digite o CPF e a senha e clique em Enviar.',
+  },
+  {
+    screenshotSrc: '/assets/sisc/screenshots/p06_5.webp',
+    paginaFisica: 6,
+    tituloPagina: 'Tela inicial do SISC',
+    anotacoes: anotacoes([
+      '<strong>Barra de menu</strong> — acesso a Principal, Grupos, Usuários, Relatórios e Sair.',
+      '<strong>Gestor Municipal</strong> — identificação do usuário logado, município e UF (código IBGE entre parênteses).',
+    ]),
+    textoExplicativo: 'Após a autenticação, é apresentada a tela inicial do SISC com a barra de menu e a identificação do gestor municipal logado.',
+  },
+  {
+    screenshotSrc: '/assets/sisc/screenshots/p07_4.webp',
+    paginaFisica: 7,
+    tituloPagina: 'Barra de Menu',
+    anotacoes: anotacoes([
+      '<strong>Principal</strong> — volta à tela inicial.',
+      '<strong>Grupos</strong> — consultar, incluir e alterar grupos.',
+      '<strong>Usuários</strong> — consulta, confirmação de participação e efetivação de cadastro provisório.',
+      '<strong>Relatórios</strong> — Relatório Principal, Situações Prioritárias e Confirmação de Participação.',
+      '<strong>Sair</strong> — finaliza o sistema.',
+    ]),
+    textoExplicativo: 'A barra de menu concentra as funcionalidades do sistema: Principal, Grupos, Usuários, Relatórios e Sair.',
+  },
+]
+
+// ------------------------- 4. MENU GRUPOS -------------------------
+const gruposCarousel = [
+  {
+    screenshotSrc: '/assets/sisc/screenshots/p08_4.webp',
+    paginaFisica: 8,
+    tituloPagina: 'Incluir Grupo',
+    anotacoes: anotacoes([
+      '<strong>Dados do grupo</strong> — preencha os campos obrigatórios.',
+      '<strong>Faixa etária</strong> — não poderá ser alterada depois.',
+      '<strong>Técnico/Orientador</strong> — nomes vêm do CadSUAS do CRAS selecionado.',
+      '<strong>Nome fantasia</strong> — nome de identificação do grupo no território.',
+      '<strong>Incluir Grupo</strong> — cria o grupo e exibe mensagem de sucesso.',
+    ]),
+    textoExplicativo: 'Ao selecionar o menu Grupos > Incluir, é exibida a tela de cadastro do grupo. Todos os campos são de preenchimento obrigatório. Nos grupos de execução indireta ainda não é possível informar o orientador social.',
+  },
+  {
+    screenshotSrc: '/assets/sisc/screenshots/p09_4.webp',
+    paginaFisica: 9,
+    tituloPagina: 'Grupo criado com sucesso',
+    anotacoes: anotacoes([
+      '<strong>Mensagem</strong> — "Grupo criado com sucesso" é exibida após a inclusão.',
+    ]),
+    textoExplicativo: 'Não havendo campos em branco, o sistema cria o grupo e exibe a mensagem de sucesso.',
+  },
+  {
+    screenshotSrc: '/assets/sisc/screenshots/p09_5.webp',
+    paginaFisica: 9,
+    tituloPagina: 'Consulta de Grupos',
+    anotacoes: anotacoes([
+      '<strong>CRAS</strong> — seleção obrigatória.',
+      '<strong>Status do grupo</strong> — Todos, Não Iniciados, Ativos e Inativos (opcional).',
+      '<strong>Ordenação</strong> — Número de Referência, Código, Nome ou Status (opcional).',
+      '<strong>Botão Consultar</strong> — efetiva a pesquisa.',
+    ]),
+    textoExplicativo: 'A tela inicial do menu Grupos apresenta os campos para pesquisa. A escolha do CRAS é obrigatória; status e ordenação são opcionais.',
+  },
+  {
+    screenshotSrc: '/assets/sisc/screenshots/p10_4.webp',
+    paginaFisica: 10,
+    tituloPagina: 'Seleção do CRAS para consulta',
+    anotacoes: anotacoes([
+      '<strong>Lista de CRAS</strong> — CRAS ativos no CadSUAS (barra de rolagem em municípios com muitos CRAS).',
+    ]),
+    textoExplicativo: 'Ao clicar na seta, aparece a lista dos CRAS ativos no CadSUAS. Escolha o CRAS desejado para a consulta.',
+  },
+  {
+    screenshotSrc: '/assets/sisc/screenshots/p11_4.webp',
+    paginaFisica: 11,
+    tituloPagina: 'Pesquisar por status do grupo',
+    anotacoes: anotacoes([
+      '<strong>Status do grupo</strong> — opções dependem dos grupos existentes no CRAS; "Todos" aparece sempre.',
+    ]),
+    textoExplicativo: 'O status do grupo pode ser Todos, Não Iniciados, Ativos ou Inativos. As opções aparecem conforme a ocorrência de grupos nas situações possíveis.',
+  },
+  {
+    screenshotSrc: '/assets/sisc/screenshots/p11_5.webp',
+    paginaFisica: 11,
+    tituloPagina: 'Ordenação dos grupos',
+    anotacoes: anotacoes([
+      '<strong>Ordenação</strong> — por Número de Referência do CRAS, Código, Nome ou Status.',
+    ]),
+    textoExplicativo: 'O resultado da consulta é apresentado na ordem definida pelo usuário.',
+  },
+  {
+    screenshotSrc: '/assets/sisc/screenshots/p12_4.webp',
+    paginaFisica: 12,
+    tituloPagina: 'Resultado de uma consulta de grupos',
+    anotacoes: anotacoes([
+      '<strong>Código, Nome, Endereço, Status</strong> — informações resumidas do grupo.',
+      '<strong>Faixa Etária, Intergeracional, Total</strong> — demais colunas da lista.',
+      '<strong>Detalhar</strong> — acione para ver as informações detalhadas do grupo.',
+    ]),
+    textoExplicativo: 'A lista de grupos é exibida com Código, Nome, Endereço, Status, Faixa Etária, Intergeracional e Total de usuários. O botão Detalhar abre as informações completas.',
+  },
+  {
+    screenshotSrc: '/assets/sisc/screenshots/p12_5.webp',
+    paginaFisica: 12,
+    tituloPagina: 'Detalhes de um grupo',
+    anotacoes: anotacoes([
+      '<strong>Informações de cadastro</strong> — dados do grupo selecionado.',
+      '<strong>Alterar</strong> — edita os dados do grupo.',
+      '<strong>Vincular Usuário</strong> — insere usuários ao grupo.',
+      '<strong>Usuários Vinculados</strong> — relação de usuários.',
+      '<strong>Histórico</strong> — histórico de alterações.',
+      '<strong>Voltar</strong> — retorna à consulta.',
+    ]),
+    textoExplicativo: 'Os detalhes do grupo apresentam o cadastro e os botões de ação: Alterar, Vincular Usuário, Usuários Vinculados, Histórico e Voltar.',
+  },
+  {
+    screenshotSrc: '/assets/sisc/screenshots/p13_4.webp',
+    paginaFisica: 13,
+    tituloPagina: 'Alteração de grupo',
+    anotacoes: anotacoes([
+      '<strong>Campos editáveis</strong> — informações do grupo disponíveis para edição.',
+      '<strong>Faixa etária</strong> — único campo que não pode ser alterado.',
+      '<strong>Salvar</strong> — efetiva as alterações.',
+    ]),
+    textoExplicativo: 'Ao acionar Alterar, é exibida a tela com os campos editáveis. O único campo inalterável é a faixa etária dos usuários do grupo.',
+  },
+  {
+    screenshotSrc: '/assets/sisc/screenshots/p13_5.webp',
+    paginaFisica: 13,
+    tituloPagina: 'Alteração feita com sucesso',
+    anotacoes: anotacoes([
+      '<strong>Mensagem</strong> — "Grupo alterado com sucesso".',
+    ]),
+    textoExplicativo: 'Após acionar Salvar, o sistema apresenta a mensagem de sucesso da alteração.',
+  },
+  {
+    screenshotSrc: '/assets/sisc/screenshots/p14_4.webp',
+    paginaFisica: 14,
+    tituloPagina: 'Consulta de usuário para inclusão em grupo',
+    anotacoes: anotacoes([
+      '<strong>Grupo selecionado</strong> — o grupo já vem selecionado.',
+      '<strong>Buscar</strong> — preencha o NIS e acione para localizar o usuário.',
+      '<strong>Detalhar</strong> — exibe resumo com os dados do usuário pesquisado.',
+      '<strong>Busca por nome</strong> — alternativa para cadastro provisório.',
+    ]),
+    textoExplicativo: 'O botão Vincular Usuário insere usuários ao grupo (limite de 30). O usuário é localizado pelo NIS ou, em sua ausência, cadastrado provisoriamente pela busca por nome.',
+  },
+  {
+    screenshotSrc: '/assets/sisc/screenshots/p15_4.webp',
+    paginaFisica: 15,
+    tituloPagina: 'Detalhes de usuário',
+    anotacoes: anotacoes([
+      '<strong>Situação Usuário</strong> — marque a situação prioritária.',
+      '<strong>Vincular</strong> — acione para concluir a vinculação.',
+    ]),
+    textoExplicativo: 'As informações do usuário são apresentadas junto ao campo Situação Usuário. Marque a situação e acione Vincular (veja as regras no item 5.5.1).',
+  },
+  {
+    screenshotSrc: '/assets/sisc/screenshots/p15_5.webp',
+    paginaFisica: 15,
+    tituloPagina: 'Inclusão de usuário realizada com sucesso',
+    anotacoes: anotacoes([
+      '<strong>Mensagem</strong> — "Usuário Vinculado com sucesso".',
+    ]),
+    textoExplicativo: 'Ao final da vinculação, o sistema apresenta a mensagem de sucesso.',
+  },
+  {
+    screenshotSrc: '/assets/sisc/screenshots/p16_4.webp',
+    paginaFisica: 16,
+    tituloPagina: 'Relação de usuários vinculados a um grupo',
+    anotacoes: anotacoes([
+      '<strong>Usuários Vinculados</strong> — relação de todos os usuários do grupo.',
+      '<strong>Exportar</strong> — extrai a relação para Excel.',
+    ]),
+    textoExplicativo: 'O botão Usuários Vinculados mostra a relação de usuários do grupo. Exportar permite baixar em arquivo Excel.',
+  },
+  {
+    screenshotSrc: '/assets/sisc/screenshots/p17_4.webp',
+    paginaFisica: 17,
+    tituloPagina: 'Consulta de grupo inativo',
+    anotacoes: anotacoes([
+      '<strong>Status inativo</strong> — botão Ativar aparece apenas para grupos inativos.',
+      '<strong>Ativar</strong> — reativa o grupo.',
+    ]),
+    textoExplicativo: 'Um grupo desativado pode ser ativado pelo botão Ativar, exibido apenas para grupos com status inativo.',
+  },
+  {
+    screenshotSrc: '/assets/sisc/screenshots/p17_5.webp',
+    paginaFisica: 17,
+    tituloPagina: 'Ativação de grupo',
+    anotacoes: anotacoes([
+      '<strong>Confirmação</strong> — o sistema solicita a confirmação da operação.',
+    ]),
+    textoExplicativo: 'Ao clicar em Ativar, o sistema pede a confirmação. Confirmando, o status passa a "Ativo".',
+  },
+  {
+    screenshotSrc: '/assets/sisc/screenshots/p18_4.webp',
+    paginaFisica: 18,
+    tituloPagina: 'Consulta a grupo (desativar)',
+    anotacoes: anotacoes([
+      '<strong>Desativar</strong> — exibido para grupos ativos e não iniciados sem usuários vinculados.',
+    ]),
+    textoExplicativo: 'Grupos sem usuários vinculados podem ser desativados pelo botão Desativar. Também é possível desativar grupos com status "não iniciado".',
+  },
+  {
+    screenshotSrc: '/assets/sisc/screenshots/p18_5.webp',
+    paginaFisica: 18,
+    tituloPagina: 'Desativação de grupo',
+    anotacoes: anotacoes([
+      '<strong>Confirmação</strong> — conclui a desativação.',
+    ]),
+    textoExplicativo: 'O procedimento de desativação só é concluído após a confirmação do operador.',
+  },
+  {
+    screenshotSrc: '/assets/sisc/screenshots/p19_4.webp',
+    paginaFisica: 19,
+    tituloPagina: 'Histórico do grupo',
+    anotacoes: anotacoes([
+      '<strong>Alterações</strong> — técnico, orientador, base física, endereço, carga horária, status e intergeracional.',
+      '<strong>Operador e data</strong> — login do usuário que alterou e data da operação.',
+    ]),
+    textoExplicativo: 'O Histórico do Grupo apresenta as alterações de cadastro do grupo, com o operador e a data de cada uma.',
+  },
+]
+
+// ------------------------- 5. MENU USUÁRIOS -------------------------
+const usuariosCarousel = [
+  {
+    screenshotSrc: '/assets/sisc/screenshots/p19_5.webp',
+    paginaFisica: 19,
+    tituloPagina: 'Menu Usuários',
+    anotacoes: anotacoes([
+      '<strong>Consultar Usuário</strong> — consulta, cadastro provisório, vínculo, alteração de grupo, alteração de situação, desvinculação e histórico.',
+      '<strong>Confirmar Participação</strong> — confirma a participação dos usuários no serviço.',
+      '<strong>Efetivar Cadastro Provisório</strong> — efetiva e/ou desvincula cadastros provisórios.',
+    ]),
+    textoExplicativo: 'O item Usuários da barra de menu possibilita o acesso às ações relacionadas aos usuários do SCFV no SISC. O submenu apresenta as funcionalidades Consultar Usuário, Confirmar Participação e Efetivar Cadastro Provisório.',
+  },
+  {
+    screenshotSrc: '/assets/sisc/screenshots/p21_4.webp',
+    paginaFisica: 21,
+    tituloPagina: 'Consultar Usuário',
+    anotacoes: anotacoes([
+      '<strong>Campo NIS</strong> — digite o número do NIS para buscar o usuário.',
+      '<strong>Buscar</strong> — acione para localizar o usuário.',
+    ]),
+    textoExplicativo: 'As consultas de usuário podem ser realizadas pelo NIS ou pelo conjunto UF, nome, data de nascimento e nome da mãe. Na consulta pelo NIS, digite o número e acione o botão Buscar.',
+  },
+  {
+    screenshotSrc: '/assets/sisc/screenshots/p21_5.webp',
+    paginaFisica: 21,
+    tituloPagina: 'Usuário localizado pelo NIS',
+    anotacoes: anotacoes([
+      '<strong>Resumo</strong> — NIS, nome, data de nascimento, sexo, CPF, nome da mãe e status.',
+      '<strong>Status</strong> — Vinculado, Desvinculado ou Não vinculado.',
+      '<strong>Detalhar</strong> — abre as informações completas do usuário.',
+    ]),
+    textoExplicativo: 'O SISC busca o registro correspondente ao NIS na base de dados do Cadastro Único (CECAD). O resumo é apresentado na parte inferior da tela. O status se refere à situação do usuário no SISC: Vinculado (incluído em um grupo), Não vinculado (nunca foi vinculado) ou Desvinculado (já esteve vinculado e foi desvinculado).',
+  },
+  {
+    screenshotSrc: '/assets/sisc/screenshots/p22_4.webp',
+    paginaFisica: 22,
+    tituloPagina: 'Tela de informações do usuário pesquisado',
+    anotacoes: anotacoes([
+      '<strong>Identificação</strong> — dados do usuário conforme cadastro no CadÚnico.',
+      '<strong>Situação Usuário</strong> — lista de situações prioritárias e a opção "não está em situação prioritária".',
+      '<strong>Consulta de grupos</strong> — exibida quando o usuário não está vinculado a nenhum grupo.',
+    ]),
+    textoExplicativo: 'Na parte superior são expostos os dados de identificação do usuário conforme o CadÚnico. O campo Situação Usuário deve ser preenchido de acordo com a situação atual do usuário; se houver divergência, informe a situação do momento e encaminhe para atualização junto ao CadÚnico. Quando o usuário estiver vinculado, o sistema mostra os dados do grupo e não exibe a consulta de grupos.',
+  },
+  {
+    screenshotSrc: '/assets/sisc/screenshots/p23_4.webp',
+    paginaFisica: 23,
+    tituloPagina: 'Busca de usuário por nome',
+    anotacoes: anotacoes([
+      '<strong>UF</strong> — unidade federativa de endereço do usuário.',
+      '<strong>Nome</strong> — nome do usuário.',
+      '<strong>Data de nascimento</strong> — data de nascimento do usuário.',
+      '<strong>Nome da mãe</strong> — nome da mãe do usuário.',
+      '<strong>Buscar</strong> — efetiva a pesquisa.',
+    ]),
+    textoExplicativo: 'Na pesquisa por Nome, preencha a UF de endereço do usuário, o nome, a data de nascimento e o nome da mãe. Ao clicar em Buscar, o sistema procura o registro dos dados informados. A busca é feita pela grafia idêntica à informada.',
+  },
+  {
+    screenshotSrc: '/assets/sisc/screenshots/p24_4.webp',
+    paginaFisica: 24,
+    tituloPagina: 'Usuário não localizado',
+    anotacoes: anotacoes([
+      '<strong>Nenhum usuário encontrado</strong> — aviso para a UF informada.',
+    ]),
+    textoExplicativo: 'No caso de não localizar, o sistema apresenta a informação de que nenhum usuário foi encontrado para aquela UF. Caso a UF selecionada seja diferente daquela informada no registro do CadÚnico, realize nova busca informando a unidade federativa correta.',
+  },
+  {
+    screenshotSrc: '/assets/sisc/screenshots/p24_5.webp',
+    paginaFisica: 24,
+    tituloPagina: 'Busca por nome realizada com sucesso',
+    anotacoes: anotacoes([
+      '<strong>Busca por Nome</strong> — filtro preenchido (UF, nome, data de nascimento e nome da mãe).',
+      '<strong>Resultado</strong> — usuário localizado pela busca por nome.',
+    ]),
+    textoExplicativo: 'A mesma busca em outra UF poderá apresentar um resultado positivo, localizando o usuário.',
+  },
+  {
+    screenshotSrc: '/assets/sisc/screenshots/p25_4.webp',
+    paginaFisica: 25,
+    tituloPagina: 'Cadastrar usuário provisoriamente',
+    anotacoes: anotacoes([
+      '<strong>Cadastrar Usuário Provisoriamente</strong> — opção apresentada quando o usuário não é localizado.',
+    ]),
+    textoExplicativo: 'Nos casos de não localização de registro, o sistema apresenta a opção de cadastro provisório. IMPORTANTE: antes de efetuar o cadastro provisório, certifique-se de que o usuário não possua NIS. O cadastro provisório é válido por três meses; após esse período, expira e deixa de ser contabilizado para o cofinanciamento federal do SCFV.',
+  },
+  {
+    screenshotSrc: '/assets/sisc/screenshots/p25_5.webp',
+    paginaFisica: 25,
+    tituloPagina: 'Formulário para cadastro provisório de usuário',
+    anotacoes: anotacoes([
+      '<strong>Dados de identificação</strong> — parte superior do formulário.',
+      '<strong>Situação</strong> — situação em que o usuário se encontra.',
+      '<strong>Consulta de grupos</strong> — escolha do grupo ao qual o usuário será vinculado.',
+    ]),
+    textoExplicativo: 'A parte superior da tela deve ser preenchida com os dados de identificação do usuário, seguida da situação em que ele se encontra. Na parte inferior é exibida a consulta de grupo para que seja escolhido o grupo ao qual o usuário será vinculado.',
+  },
+  {
+    screenshotSrc: '/assets/sisc/screenshots/p26_4.webp',
+    paginaFisica: 26,
+    tituloPagina: 'Usuário provisório vinculado com sucesso',
+    anotacoes: anotacoes([
+      '<strong>Vincular</strong> — acione após preencher os dados e selecionar o grupo.',
+      '<strong>Mensagem</strong> — sucesso da vinculação.',
+    ]),
+    textoExplicativo: 'Após o preenchimento de todos os dados e a seleção do grupo para vinculação do usuário, o botão Vincular deve ser acionado. O sistema, então, exibirá mensagem de sucesso.',
+  },
+  {
+    screenshotSrc: '/assets/sisc/screenshots/p27_4.webp',
+    paginaFisica: 27,
+    tituloPagina: 'Vincular usuário a um grupo',
+    anotacoes: anotacoes([
+      '<strong>Consulta de grupos</strong> — grupos registrados no CRAS selecionado.',
+      '<strong>Vincular</strong> — acione para efetuar a vinculação.',
+    ]),
+    textoExplicativo: 'Após fazer a consulta de um usuário, pode-se vinculá-lo ao grupo do qual ele faz parte: consulte os grupos já registrados no CRAS selecionado, escolha aquele do qual o usuário participa e acione o botão Vincular. Regras: limite de 30 usuários por grupo; grupo intergeracional permite vincular usuário de qualquer idade; grupo NÃO intergeracional permite vincular apenas usuários dentro da faixa etária do grupo, exceto pessoas com deficiência.',
+  },
+  {
+    screenshotSrc: '/assets/sisc/screenshots/p27_5.webp',
+    paginaFisica: 27,
+    tituloPagina: 'Vinculação concluída com sucesso',
+    anotacoes: anotacoes([
+      '<strong>Mensagem</strong> — "Usuário Vinculado com sucesso!".',
+    ]),
+    textoExplicativo: 'Ao concluir a vinculação, o sistema apresenta a mensagem "Usuário Vinculado com sucesso!".',
+  },
+  {
+    screenshotSrc: '/assets/sisc/screenshots/p28_4.webp',
+    paginaFisica: 28,
+    tituloPagina: 'Tela para alteração de grupo',
+    anotacoes: anotacoes([
+      '<strong>Alterar Grupo</strong> — botão na tela de informações do usuário, após acionar Detalhar.',
+    ]),
+    textoExplicativo: 'O grupo ao qual o usuário pertence pode ser alterado. Na tela de informações do usuário, após acionar o botão Detalhar, clique no botão Alterar Grupo.',
+  },
+  {
+    screenshotSrc: '/assets/sisc/screenshots/p29_4.webp',
+    paginaFisica: 29,
+    tituloPagina: 'Seleção de novo grupo',
+    anotacoes: anotacoes([
+      '<strong>Consulta de grupo</strong> — janela para selecionar o novo grupo.',
+      '<strong>Vincular</strong> — conclui a alteração de grupo.',
+    ]),
+    textoExplicativo: 'A janela de consulta de grupo é apresentada. Assinale o grupo para o qual deseja fazer a alteração e clique no botão Vincular, aguardando a mensagem "Usuário vinculado a outro grupo com sucesso!".',
+  },
+  {
+    screenshotSrc: '/assets/sisc/screenshots/p29_5.webp',
+    paginaFisica: 29,
+    tituloPagina: 'Operação realizada com sucesso',
+    anotacoes: anotacoes([
+      '<strong>Mensagem</strong> — "Usuário vinculado a outro grupo com sucesso!".',
+    ]),
+    textoExplicativo: 'Após a vinculação ao novo grupo, o sistema apresenta a mensagem de sucesso.',
+  },
+  {
+    screenshotSrc: '/assets/sisc/screenshots/p30_4.webp',
+    paginaFisica: 30,
+    tituloPagina: 'Alterar situação do usuário',
+    anotacoes: anotacoes([
+      '<strong>Situação Usuário</strong> — assinale a nova situação prioritária.',
+      '<strong>Salvar</strong> — registra a alteração.',
+    ]),
+    textoExplicativo: 'Toda vez que for identificada mudança na situação do usuário, deve-se registrar a alteração no SISC: 1º) consultar o usuário; 2º) acionar o botão Detalhar; 3º) assinalar a nova situação do usuário; 4º) clicar no botão Salvar.',
+  },
+  {
+    screenshotSrc: '/assets/sisc/screenshots/p30_5.webp',
+    paginaFisica: 30,
+    tituloPagina: 'Alteração da situação prioritária do usuário',
+    anotacoes: anotacoes([
+      '<strong>Confirmação</strong> — salvamento da situação alterada.',
+      '<strong>Histórico</strong> — as alterações ficam registradas para consulta posterior.',
+    ]),
+    textoExplicativo: 'Os registros das alterações efetuadas são mantidos em histórico e podem ser consultados posteriormente.',
+  },
+  {
+    screenshotSrc: '/assets/sisc/screenshots/p31_4.webp',
+    paginaFisica: 31,
+    tituloPagina: 'Situação incompatível com a idade do usuário',
+    anotacoes: anotacoes([
+      '<strong>Situações inabilitadas</strong> — situações prioritárias incompatíveis com a idade do usuário.',
+      '<strong>Aviso</strong> — alerta solicitando atenção à marcação, mesmo que as informações estejam corretas.',
+    ]),
+    textoExplicativo: 'Ao assinalar e/ou alterar a situação do usuário, é necessário atentar para as regras de compatibilidade com a idade. As situações prioritárias incompatíveis com a idade do usuário aparecem inabilitadas para marcação. Ao final do campo é exibido um aviso solicitando atenção à marcação, que sempre aparece como alerta, mesmo que as informações estejam corretas.',
+  },
+  {
+    screenshotSrc: '/assets/sisc/screenshots/p32_4.webp',
+    paginaFisica: 32,
+    tituloPagina: 'Aviso de situação incompatível com a idade do usuário',
+    anotacoes: anotacoes([
+      '<strong>Asterisco (Não prioritário*)</strong> — sinaliza usuários com marcação de situação prioritária incompatível com a idade que necessitam de alteração.',
+    ]),
+    textoExplicativo: 'IMPORTANTE! Nos casos em que a situação do usuário foi assinalada incorretamente, o sistema mantém a informação da situação prioritária e sinaliza com um asterisco (Não prioritário*) os usuários que estão com marcação incompatível com a idade e necessitam de alteração pelo responsável pelo registro no SISC.',
+  },
+  {
+    screenshotSrc: '/assets/sisc/screenshots/p32_5.webp',
+    paginaFisica: 32,
+    tituloPagina: 'Desvincular usuário',
+    anotacoes: anotacoes([
+      '<strong>Desvincular</strong> — botão logo abaixo das informações do grupo deste usuário.',
+    ]),
+    textoExplicativo: 'O procedimento de desvincular pode ser realizado a partir da tela de informações do usuário. O botão Desvincular fica logo abaixo das informações do grupo deste usuário.',
+  },
+  {
+    screenshotSrc: '/assets/sisc/screenshots/p33_4.webp',
+    paginaFisica: 33,
+    tituloPagina: 'Motivo da desvinculação',
+    anotacoes: anotacoes([
+      '<strong>Motivo</strong> — mudança de município, falecimento, solicitação de desvinculação por parte do usuário, fora das faixas etárias atendidas pelo município, duplicidade de cadastro ou avaliação da equipe técnica com participação do usuário.',
+    ]),
+    textoExplicativo: 'Após acionar o botão Desvincular, o sistema solicitará que seja informado o motivo da desvinculação e o encaminhamento do usuário, quando for o caso. Deve-se selecionar uma das opções disponíveis.',
+  },
+  {
+    screenshotSrc: '/assets/sisc/screenshots/p33_5.webp',
+    paginaFisica: 33,
+    tituloPagina: 'Encaminhamento do usuário desvinculado',
+    anotacoes: anotacoes([
+      '<strong>Encaminhamento</strong> — indicado conforme o motivo selecionado.',
+      '<strong>Salvar</strong> — conclui a operação.',
+    ]),
+    textoExplicativo: 'A depender do motivo da desvinculação selecionado, o sistema solicitará a indicação do encaminhamento. Após selecionar o encaminhamento, clique no botão Salvar para concluir a operação. Quando o motivo for falecimento ou duplicidade de cadastro, não será apresentada a opção de encaminhamento; neste caso, basta acionar o botão Salvar.',
+  },
+  {
+    screenshotSrc: '/assets/sisc/screenshots/p34_4.webp',
+    paginaFisica: 34,
+    tituloPagina: 'Desvinculação efetivada',
+    anotacoes: anotacoes([
+      '<strong>Mensagem</strong> — "Usuário desvinculado com sucesso!".',
+    ]),
+    textoExplicativo: 'Ao finalizar a operação, o sistema apresenta a mensagem "Usuário desvinculado com sucesso!".',
+  },
+  {
+    screenshotSrc: '/assets/sisc/screenshots/p34_5.webp',
+    paginaFisica: 34,
+    tituloPagina: 'Desvincular cadastro provisório',
+    anotacoes: anotacoes([
+      '<strong>Efetivar cadastro provisório</strong> — funcionalidade do menu Usuários.',
+      '<strong>Detalhar</strong> — abre a tela de informações do usuário provisório.',
+      '<strong>Desvincular</strong> — desvincula cadastros provisórios que não participam mais do SCFV.',
+    ]),
+    textoExplicativo: 'Usuários cadastrados provisoriamente e que não estejam mais participando do SCFV devem ser desvinculados. A desvinculação pode ser feita pela funcionalidade Efetivar cadastro provisório (botão Detalhar ao lado do nome do usuário) ou pelo botão Usuários vinculados da tela de detalhamento do grupo.',
+  },
+  {
+    screenshotSrc: '/assets/sisc/screenshots/p35_4.webp',
+    paginaFisica: 35,
+    tituloPagina: 'Histórico do usuário',
+    anotacoes: anotacoes([
+      '<strong>Histórico</strong> — registro inicial e alterações (situação prioritária, participação em grupos), com identificação do operador e data da operação.',
+    ]),
+    textoExplicativo: 'Para consultar o histórico do usuário, faça a consulta do usuário e acione o botão Histórico. No histórico são apresentadas as informações de registro inicial, seguidas das alterações registradas no sistema, incluindo a identificação do operador e a data da operação.',
+  },
+  {
+    screenshotSrc: '/assets/sisc/screenshots/p35_5.webp',
+    paginaFisica: 35,
+    tituloPagina: 'Tela de seleção do grupo para confirmação de participação',
+    anotacoes: anotacoes([
+      '<strong>Período</strong> — período da confirmação a ser realizada.',
+      '<strong>Data limite</strong> — data limite para a entrada dos dados.',
+    ]),
+    textoExplicativo: 'Esta opção dá acesso à funcionalidade de confirmação de participação dos usuários no SCFV. O sistema apresenta uma tela contendo o período da confirmação e a data limite para a entrada dos dados. A Confirmação de Participação tem impacto no cálculo do cofinanciamento federal para o SCFV e deve ser feita a cada trimestre para todos os usuários registrados no SISC.',
+  },
+  {
+    screenshotSrc: '/assets/sisc/screenshots/p36_4.webp',
+    paginaFisica: 36,
+    tituloPagina: 'Selecionando um CRAS',
+    anotacoes: anotacoes([
+      '<strong>CRAS</strong> — selecione o CRAS para a confirmação.',
+    ]),
+    textoExplicativo: 'O usuário deverá selecionar um CRAS e, em seguida, o grupo para o qual deseja registrar a informação de confirmação de participação.',
+  },
+  {
+    screenshotSrc: '/assets/sisc/screenshots/p36_5.webp',
+    paginaFisica: 36,
+    tituloPagina: 'Escolhendo um grupo para fazer a confirmação de participação',
+    anotacoes: anotacoes([
+      '<strong>Grupo</strong> — selecione o grupo de usuários a confirmar.',
+    ]),
+    textoExplicativo: 'Após escolher o grupo, o sistema apresenta a relação dos usuários vinculados ao grupo selecionado.',
+  },
+  {
+    screenshotSrc: '/assets/sisc/screenshots/p37_4.webp',
+    paginaFisica: 37,
+    tituloPagina: 'Lista de usuários para confirmação de participação',
+    anotacoes: anotacoes([
+      '<strong>Dados</strong> — NIS ou três asteriscos (***) para provisórios, data de vinculação, nome, sexo, data de nascimento e situação prioritária.',
+      '<strong>Confirmação</strong> — campo para marcar a informação da confirmação de participação.',
+    ]),
+    textoExplicativo: 'Para cada pessoa são apresentados: o número do NIS ou três asteriscos (***) quando o usuário estiver cadastrado provisoriamente, a data da vinculação ao grupo, o nome, o sexo, a data de nascimento, se está em situação prioritária ou não e o campo para marcar a confirmação de participação.',
+  },
+  {
+    screenshotSrc: '/assets/sisc/screenshots/p37_5.webp',
+    paginaFisica: 37,
+    tituloPagina: 'Opções disponíveis para confirmar todos de uma única vez',
+    anotacoes: anotacoes([
+      '<strong>Confirmar</strong> — opção com uma seta ao lado, no canto inferior esquerdo da tela.',
+      '<strong>Todos com sim / Todos com não</strong> — opções apresentadas ao clicar na seta.',
+    ]),
+    textoExplicativo: 'No canto inferior esquerdo da tela há a opção Confirmar com uma seta ao lado. Ao clicar na seta, são apresentadas as opções "Todos com sim" e "Todos com não".',
+  },
+  {
+    screenshotSrc: '/assets/sisc/screenshots/p37_6.webp',
+    paginaFisica: 37,
+    tituloPagina: 'Confirmar todos os usuários com SIM',
+    anotacoes: anotacoes([
+      '<strong>Todos com sim</strong> — atribui a opção escolhida a todos os usuários do grupo.',
+    ]),
+    textoExplicativo: 'Ao selecionar uma das opções, o sistema atribuirá a opção escolhida para todos os usuários do grupo. IMPORTANTE: as informações só serão gravadas após o botão Salvar ser acionado.',
+  },
+  {
+    screenshotSrc: '/assets/sisc/screenshots/p38_4.webp',
+    paginaFisica: 38,
+    tituloPagina: 'Mensagem apresentada quando houver usuário(s) sem marcação de confirmação de participação',
+    anotacoes: anotacoes([
+      '<strong>Mensagem</strong> — erro quando algum usuário fica sem marcação de confirmação.',
+    ]),
+    textoExplicativo: 'Caso o operador não utilize a opção para atribuir todos com sim ou não, deverá assinalar a informação correspondente para cada usuário. Se não for assinalada uma das opções "sim" ou "não" para algum dos usuários, o sistema apresenta uma mensagem de erro.',
+  },
+  {
+    screenshotSrc: '/assets/sisc/screenshots/p38_5.webp',
+    paginaFisica: 38,
+    tituloPagina: 'Mensagem apresentada em caso de sucesso',
+    anotacoes: anotacoes([
+      '<strong>Mensagem</strong> — sucesso quando todos os usuários têm confirmação assinalada.',
+    ]),
+    textoExplicativo: 'Quando todos os usuários tiverem assinalada uma das opções de confirmação, é apresentada a mensagem de sucesso da operação.',
+  },
+  {
+    screenshotSrc: '/assets/sisc/screenshots/p38_6.webp',
+    paginaFisica: 38,
+    tituloPagina: 'Mensagem apresentada ao abrir o arquivo em Excel',
+    anotacoes: anotacoes([
+      '<strong>Exportar Tabela</strong> — exporta os dados da tela para uma planilha em Excel.',
+      '<strong>Sim</strong> — confirma a abertura do arquivo.',
+    ]),
+    textoExplicativo: 'O botão Exportar Tabela, localizado na parte inferior da tela, exporta os dados para uma planilha em Excel. Ao clicar no nome do arquivo, aparecerá uma mensagem; acione o botão Sim para visualizar o relatório.',
+  },
+  {
+    screenshotSrc: '/assets/sisc/screenshots/p39_4.webp',
+    paginaFisica: 39,
+    tituloPagina: 'Aviso de encerrado o prazo de confirmação',
+    anotacoes: anotacoes([
+      '<strong>Aviso</strong> — confirmação não permitida após o encerramento do prazo.',
+    ]),
+    textoExplicativo: 'Quando a data limite de confirmação da participação dos usuários do trimestre se encerra, o sistema não permitirá a confirmação dos usuários até o primeiro dia do mês seguinte ao prazo de encerramento.',
+  },
+  {
+    screenshotSrc: '/assets/sisc/screenshots/p39_5.webp',
+    paginaFisica: 39,
+    tituloPagina: 'Efetivar cadastro provisório',
+    anotacoes: anotacoes([
+      '<strong>Lista</strong> — usuários cadastrados provisoriamente.',
+      '<strong>Campo NIS</strong> — informe o NIS no campo correspondente.',
+      '<strong>Verificar</strong> — busca os dados correspondentes ao número informado.',
+    ]),
+    textoExplicativo: 'Nesta opção do menu Usuários, o sistema apresenta a lista com os usuários cadastrados provisoriamente. Para tornar o cadastro provisório efetivo, informe o NIS no campo correspondente e acione o botão Verificar. Caso o botão seja acionado sem o preenchimento do NIS, o sistema apresenta uma mensagem de erro.',
+  },
+  {
+    screenshotSrc: '/assets/sisc/screenshots/p40_4.webp',
+    paginaFisica: 40,
+    tituloPagina: 'Mensagem de erro',
+    anotacoes: anotacoes([
+      '<strong>Mensagem</strong> — erro ao acionar Verificar sem informar o NIS.',
+    ]),
+    textoExplicativo: 'Caso o botão Verificar seja acionado sem que o campo NIS tenha sido preenchido, o sistema apresenta uma mensagem de erro.',
+  },
+  {
+    screenshotSrc: '/assets/sisc/screenshots/p40_5.webp',
+    paginaFisica: 40,
+    tituloPagina: 'Dados corretos, cadastro provisório poderá ser efetivado',
+    anotacoes: anotacoes([
+      '<strong>Dados do cadastro provisório</strong> — nome, data de nascimento, nome da mãe e município de residência.',
+      '<strong>Dados do NIS</strong> — informações correspondentes ao número informado no CECAD/CadÚnico.',
+      '<strong>Efetivar</strong> — confirma a efetivação.',
+    ]),
+    textoExplicativo: 'Após o preenchimento do NIS e o acionamento do botão Verificar, o sistema busca os dados correspondentes no CECAD/CadÚnico. Caso os campos nome, nome da mãe, data de nascimento e município de residência/UF estejam idênticos, o cadastro poderá ser efetivado acionando o botão Efetivar. O SISC assumirá as informações registradas no CadÚnico.',
+  },
+  {
+    screenshotSrc: '/assets/sisc/screenshots/p41_4.webp',
+    paginaFisica: 41,
+    tituloPagina: 'Dados divergentes entre cadastro provisório e CadÚnico',
+    anotacoes: anotacoes([
+      '<strong>Divergências</strong> — informações diferentes apresentadas em vermelho.',
+      '<strong>Alerta</strong> — número de informações divergentes.',
+    ]),
+    textoExplicativo: 'Caso existam divergências entre os dados do cadastro provisório e os dados do CECAD/CadÚnico, o sistema apresenta as informações diferentes em vermelho e mostra um alerta sobre o número de informações divergentes. Avalie se trata do mesmo usuário e, em caso positivo, é possível efetivar o cadastro, responsabilizando-se pela operação. Em caso de divergência, erro ou dado desatualizado, encaminhe para atualização cadastral.',
+  },
+  {
+    screenshotSrc: '/assets/sisc/screenshots/p42_4.webp',
+    paginaFisica: 42,
+    tituloPagina: 'Busca de um usuário provisório específico',
+    anotacoes: anotacoes([
+      '<strong>Buscar</strong> — campo no qual pode ser digitado o nome de um usuário específico.',
+      '<strong>Detalhar</strong> — direciona para a tela de informações do usuário.',
+      '<strong>Exportar Tabela</strong> — exporta os dados da tela para planilha do Excel.',
+    ]),
+    textoExplicativo: 'Na lista de usuários da funcionalidade Efetivar Cadastro Provisório, o botão Detalhar fica logo à direita do botão Verificar e direciona para a tela de informações do usuário. Na parte superior à direita há o campo Buscar para digitar o nome de um usuário provisório específico; na parte inferior, o botão Exportar Tabela exporta os dados para planilha do Excel.',
+  },
+]
+
+// ------------------------- 6. MENU RELATÓRIOS -------------------------
+const relatoriosCarousel = [
+  {
+    screenshotSrc: '/assets/sisc/screenshots/p42_5.webp',
+    paginaFisica: 42,
+    tituloPagina: 'Menu Relatórios',
+    anotacoes: anotacoes([
+      '<strong>Relatório Principal</strong> — informações gerais de usuários e grupos.',
+      '<strong>Situações Prioritárias</strong> — relatório das situações prioritárias.',
+      '<strong>Confirmação de Participação</strong> — relatório de confirmação de participação.',
+    ]),
+    textoExplicativo: 'O item Relatórios da barra de menu possibilita o acesso às ações relacionadas aos relatórios disponíveis do SCFV no SISC. Ao acionar o menu Relatórios é apresentado o submenu com os relatórios para acompanhamento do SCFV: Relatório Principal, Situações Prioritárias e Confirmação de Participação.',
+  },
+  {
+    screenshotSrc: '/assets/sisc/screenshots/p43_4.webp',
+    paginaFisica: 43,
+    tituloPagina: 'Relatório Principal',
+    anotacoes: anotacoes([
+      '<strong>Menu</strong> — menu de opções na parte superior da tela.',
+      '<strong>Resumo do município</strong> — total de usuários e de grupos cadastrados no SISC e a quantidade inserida no dia.',
+      '<strong>Gráficos</strong> — inserção diária de usuários e de grupos em um período de tempo.',
+    ]),
+    textoExplicativo: 'Ao acessar o Relatório Principal, o sistema redireciona para uma página com informações gerais dos usuários e grupos inseridos no SISC. Na parte superior fica o menu de opções; abaixo é apresentado o resumo da situação do município e, na parte inferior, dois gráficos com os valores diários de inserção de usuários e grupos.',
+  },
+  {
+    screenshotSrc: '/assets/sisc/screenshots/p43_5.webp',
+    paginaFisica: 43,
+    tituloPagina: 'Período de tempo apresentado no gráfico',
+    anotacoes: anotacoes([
+      '<strong>Seleção de período</strong> — clique no limite esquerdo ou direito da área selecionada e arraste o mouse.',
+      '<strong>Datas</strong> — início e término do intervalo no canto superior direito do gráfico.',
+    ]),
+    textoExplicativo: 'Na parte inferior da tela são mostrados dois gráficos: o primeiro com o número de usuários e o segundo com os grupos inseridos num período de tempo. O período pode ser definido pelo operador clicando no limite esquerdo ou direito da área selecionada e arrastando o mouse conforme o desejado. No canto superior direito do gráfico são mostradas as datas de início e término do intervalo correspondente à seleção.',
+  },
+  {
+    screenshotSrc: '/assets/sisc/screenshots/p44_4.webp',
+    paginaFisica: 44,
+    tituloPagina: 'Total de usuários no SISC e inseridos no dia',
+    anotacoes: anotacoes([
+      '<strong>Total de usuários ativos</strong> — quantidade do município.',
+      '<strong>Inserções do dia</strong> — número de usuários inseridos no dia.',
+      '<strong>Ver detalhes</strong> — abre janela com mais informações.',
+    ]),
+    textoExplicativo: 'Na parte superior à esquerda do Relatório Principal, o sistema apresenta o total de usuários ativos e as inserções do dia, com o link Ver detalhes.',
+  },
+  {
+    screenshotSrc: '/assets/sisc/screenshots/p44_5.webp',
+    paginaFisica: 44,
+    tituloPagina: 'Lista de usuários por município e faixa etária',
+    anotacoes: anotacoes([
+      '<strong>Faixas etárias</strong> — 0 a 17, 18 a 59 e a partir de 60 anos.',
+      '<strong>Quantitativos</strong> — Prioritários, Não Prioritários e Total por faixa.',
+      '<strong>Município</strong> — clique com o botão direito para detalhar os CRAS.',
+    ]),
+    textoExplicativo: 'A tela Ver detalhes apresenta o total de usuários do município separados por faixa etária e por situação prioritária.',
+  },
+  {
+    screenshotSrc: '/assets/sisc/screenshots/p45_4.webp',
+    paginaFisica: 45,
+    tituloPagina: 'Relação de CRAS do município',
+    anotacoes: anotacoes([
+      '<strong>CRAS</strong> — relação dos CRAS da localidade.',
+      '<strong>Grupos e usuários</strong> — quantidade de grupos em atividade e usuários ativos.',
+    ]),
+    textoExplicativo: 'Clicando com o botão direito no nome do município, é apresentada a relação dos CRAS com grupos e usuários.',
+  },
+  {
+    screenshotSrc: '/assets/sisc/screenshots/p45_5.webp',
+    paginaFisica: 45,
+    tituloPagina: 'Detalhes dos grupos de um CRAS',
+    anotacoes: anotacoes([
+      '<strong>Código, Nome, Status</strong> — dados dos grupos do CRAS.',
+      '<strong>Total de usuários</strong> — Ativos, Expirados, Prioritários e Não Prioritários.',
+    ]),
+    textoExplicativo: 'Ao acionar o link de um CRAS, o sistema apresenta o relatório dos grupos daquele CRAS.',
+  },
+  {
+    screenshotSrc: '/assets/sisc/screenshots/p46_4.webp',
+    paginaFisica: 46,
+    tituloPagina: 'Detalhes dos usuários de um grupo',
+    anotacoes: anotacoes([
+      '<strong>Informações</strong> — NIS, nome, data de nascimento, idade e situação.',
+      '<strong>NIS (***)</strong> — para usuários cadastrados provisoriamente.',
+      '<strong>Exportar Tabela</strong> — exporta para Excel.',
+    ]),
+    textoExplicativo: 'Ao clicar na quantidade de usuários de um grupo, são apresentados os usuários vinculados a ele.',
+  },
+  {
+    screenshotSrc: '/assets/sisc/screenshots/p46_5.webp',
+    paginaFisica: 46,
+    tituloPagina: 'Detalhes do usuário no grupo',
+    anotacoes: anotacoes([
+      '<strong>Situação do usuário</strong> — apresentado como link para detalhar.',
+    ]),
+    textoExplicativo: 'O campo situação do usuário é um link que abre informações sobre a situação do usuário.',
+  },
+  {
+    screenshotSrc: '/assets/sisc/screenshots/p47_4.webp',
+    paginaFisica: 47,
+    tituloPagina: 'Total de grupos no SISC e criados no dia',
+    anotacoes: anotacoes([
+      '<strong>Total de grupos</strong> — grupos existentes.',
+      '<strong>Grupos criados no dia</strong> — número do dia.',
+      '<strong>Ver detalhes</strong> — abre relatório de grupos.',
+    ]),
+    textoExplicativo: 'Na parte superior à direita do Relatório Principal, são mostrados os totais de grupos do município.',
+  },
+  {
+    screenshotSrc: '/assets/sisc/screenshots/p47_5.webp',
+    paginaFisica: 47,
+    tituloPagina: 'Relatório dos grupos do município',
+    anotacoes: anotacoes([
+      '<strong>Status</strong> — Não iniciado, Ativo, Em atividade, Inativo e Total.',
+      '<strong>Legenda</strong> — explicação de cada Status ao final da página.',
+    ]),
+    textoExplicativo: 'O relatório dos grupos do município apresenta os grupos separados por status, com legenda.',
+  },
+  {
+    screenshotSrc: '/assets/sisc/screenshots/p48_4.webp',
+    paginaFisica: 48,
+    tituloPagina: 'Relação de CRAS do município (grupos)',
+    anotacoes: anotacoes([
+      '<strong>CRAS</strong> — lista dos CRAS cadastrados no município.',
+      '<strong>Grupos e usuários</strong> — quantidade por CRAS.',
+    ]),
+    textoExplicativo: 'Ao clicar no nome do município, abre-se a janela com os CRAS e a quantidade de grupos e usuários.',
+  },
+  {
+    screenshotSrc: '/assets/sisc/screenshots/p48_5.webp',
+    paginaFisica: 48,
+    tituloPagina: 'Detalhes de um grupo de um CRAS',
+    anotacoes: anotacoes([
+      '<strong>Código, Nome, Status</strong> — dados dos grupos.',
+      '<strong>Total de usuários</strong> — Ativos, Expirados, Prioritários e Não Prioritários.',
+    ]),
+    textoExplicativo: 'Ao clicar na linha do CRAS, são apresentados os grupos cadastrados naquele CRAS.',
+  },
+  {
+    screenshotSrc: '/assets/sisc/screenshots/p49_4.webp',
+    paginaFisica: 49,
+    tituloPagina: 'Detalhes do usuário de um grupo',
+    anotacoes: anotacoes([
+      '<strong>Informações</strong> — NIS, nome, data de nascimento, idade e situação.',
+      '<strong>Cadastro provisório</strong> — NIS preenchido com ***.',
+    ]),
+    textoExplicativo: 'Clicando na quantidade de usuários de um grupo, são apresentados os usuários vinculados.',
+  },
+  {
+    screenshotSrc: '/assets/sisc/screenshots/p49_5.webp',
+    paginaFisica: 49,
+    tituloPagina: 'Detalhes do usuário do grupo',
+    anotacoes: anotacoes([
+      '<strong>Situação do usuário</strong> — link para detalhar.',
+    ]),
+    textoExplicativo: 'O campo situação do usuário é um link que abre informações sobre o usuário.',
+  },
+  {
+    screenshotSrc: '/assets/sisc/screenshots/p50_4.webp',
+    paginaFisica: 50,
+    tituloPagina: 'Filtros para geração de relatório das situações prioritárias',
+    anotacoes: anotacoes([
+      '<strong>Faixa etária</strong> — Todas as idades, pré-definidas ou definir.',
+      '<strong>Situações prioritárias</strong> — uma ou mais situações obrigatoriamente.',
+      '<strong>Outras opções</strong> — CRAS, Grupo, Raça/Cor e Gênero.',
+      '<strong>Gerar Relatório</strong> — conclui a seleção.',
+    ]),
+    textoExplicativo: 'O relatório de Situações Prioritárias permite selecionar filtros para a geração do relatório dos usuários atendidos.',
+  },
+  {
+    screenshotSrc: '/assets/sisc/screenshots/p51_4.webp',
+    paginaFisica: 51,
+    tituloPagina: 'Faixas etárias pré-definidas',
+    anotacoes: anotacoes([
+      '<strong>Pré-definidas</strong> — faixas etárias disponíveis para seleção.',
+    ]),
+    textoExplicativo: 'Ao selecionar "Pré-definidas", o sistema apresenta as faixas etárias disponíveis para seleção.',
+  },
+  {
+    screenshotSrc: '/assets/sisc/screenshots/p51_5.webp',
+    paginaFisica: 51,
+    tituloPagina: 'Filtro - definir a faixa etária',
+    anotacoes: anotacoes([
+      '<strong>Definir</strong> — arraste as bordas para escolher idade mínima e máxima.',
+    ]),
+    textoExplicativo: 'A opção "Definir" permite escolher qualquer faixa etária arrastando as bordas do intervalo.',
+  },
+  {
+    screenshotSrc: '/assets/sisc/screenshots/p52_4.webp',
+    paginaFisica: 52,
+    tituloPagina: 'Seleção das situações prioritárias do usuário',
+    anotacoes: anotacoes([
+      '<strong>Situações</strong> — escolha uma ou mais, ou "marcar todas as opções".',
+      '<strong>Situação incompatível</strong> — seleciona usuários com marcação incompatível com a idade.',
+    ]),
+    textoExplicativo: 'É obrigatório escolher uma ou mais situações prioritárias, ou marcar todas as opções.',
+  },
+  {
+    screenshotSrc: '/assets/sisc/screenshots/p52_5.webp',
+    paginaFisica: 52,
+    tituloPagina: 'Aviso sobre a necessidade de escolher as situações prioritárias',
+    anotacoes: anotacoes([
+      '<strong>Mensagem de erro</strong> — exibida quando nenhuma situação é selecionada.',
+      '<strong>Fechar</strong> — retorna à tela de seleção dos filtros.',
+    ]),
+    textoExplicativo: 'Se nenhuma situação for selecionada, o sistema mostra uma mensagem de erro. Clique em Fechar e refaça a seleção.',
+  },
+  {
+    screenshotSrc: '/assets/sisc/screenshots/p52_6.webp',
+    paginaFisica: 52,
+    tituloPagina: 'Seleção de filtros',
+    anotacoes: anotacoes([
+      '<strong>Outras opções</strong> — CRAS, Grupo, Raça/Cor e Gênero podem ser selecionados simultaneamente.',
+    ]),
+    textoExplicativo: 'Outros filtros detalhados podem ser selecionados em "outras opções" para gerar relatórios mais específicos.',
+  },
+  {
+    screenshotSrc: '/assets/sisc/screenshots/p53_4.webp',
+    paginaFisica: 53,
+    tituloPagina: 'Cabeçalho do relatório das situações prioritárias',
+    anotacoes: anotacoes([
+      '<strong>Data e hora</strong> — extração dos dados.',
+      '<strong>Faixa etária escolhida</strong> — informação no cabeçalho.',
+    ]),
+    textoExplicativo: 'O cabeçalho do relatório mostra a data e a hora da extração, bem como a faixa etária escolhida.',
+  },
+  {
+    screenshotSrc: '/assets/sisc/screenshots/p53_5.webp',
+    paginaFisica: 53,
+    tituloPagina: 'Parte superior do relatório',
+    anotacoes: anotacoes([
+      '<strong>Exportar</strong> — CSV ou Excel.',
+      '<strong>Registros por página</strong> — 10, 25, 50 ou 100.',
+      '<strong>Buscar</strong> — campo para localizar por nome de grupo.',
+    ]),
+    textoExplicativo: 'O relatório pode ser exportado para CSV ou Excel, com número de registros por página e campo de busca.',
+  },
+  {
+    screenshotSrc: '/assets/sisc/screenshots/p54_4.webp',
+    paginaFisica: 54,
+    tituloPagina: 'Botões de navegação no relatório',
+    anotacoes: anotacoes([
+      '<strong>Anterior / Seguinte</strong> — navega entre as páginas.',
+      '<strong>Número da página</strong> — seleção direta.',
+    ]),
+    textoExplicativo: 'A navegação pelas páginas do relatório é feita pelos botões anterior/seguinte ou pela seleção do número.',
+  },
+  {
+    screenshotSrc: '/assets/sisc/screenshots/p54_5.webp',
+    paginaFisica: 54,
+    tituloPagina: 'Tela principal de Confirmação de Participação',
+    anotacoes: anotacoes([
+      '<strong>Confirmados / Não confirmados</strong> — quantitativos e porcentagem do trimestre.',
+      '<strong>Gráfico</strong> — número de usuários confirmados por dia.',
+      '<strong>Ver detalhes</strong> — dados consolidados do trimestre.',
+    ]),
+    textoExplicativo: 'A tela de Confirmação de Participação apresenta os quantitativos de usuários confirmados e não confirmados e o gráfico por dia.',
+  },
+  {
+    screenshotSrc: '/assets/sisc/screenshots/p55_4.webp',
+    paginaFisica: 55,
+    tituloPagina: 'Confirmação de participação - dados consolidados para o município',
+    anotacoes: anotacoes([
+      '<strong>Totais</strong> — total de usuários, confirmados e não confirmados, com porcentagens.',
+      '<strong>Exportar Tabela</strong> — grava os dados em Excel.',
+    ]),
+    textoExplicativo: 'Ver detalhes apresenta o total consolidado das confirmações de participação do trimestre pelo município.',
+  },
+  {
+    screenshotSrc: '/assets/sisc/screenshots/p55_5.webp',
+    paginaFisica: 55,
+    tituloPagina: 'Confirmação de participação - dados consolidados por CRAS',
+    anotacoes: anotacoes([
+      '<strong>UF</strong> — clique na barra para acessar por CRAS.',
+      '<strong>Exportar Tabela</strong> — grava os dados em Excel.',
+    ]),
+    textoExplicativo: 'Ao clicar sobre a UF na barra cinza, o operador é direcionado para a tela de confirmação por CRAS.',
+  },
+]
+---
+
+<section id="acesso-sistema" class="space-y-4">
+  <SectionHeader number="4.1" title="Acesso ao Sistema" accent="blue" subtitle="Login e tela inicial do SISC" />
+  <SecaoTutorialCarousel
+    id="acesso-sisc"
+    titulo="Acesso ao SISC"
+    descricao="Fluxo de acesso ao SISC por meio do Sistema de Autenticação e Autorização (SAA) e da tela inicial do sistema."
+    paginas={acessoCarousel}
+    observacao="O acesso ao sistema requer cadastro no SAA (Sistema de Autenticação e Autorização) com perfil de acesso ao SISC, concedido pelo Administrador Titular ou Adjunto do Órgão Gestor."
+  />
+</section>
+
+<section id="menu-grupos" class="space-y-4">
+  <SectionHeader number="4.2" title="Menu Grupos" accent="green" subtitle="Incluir, consultar, alterar, vincular e desativar grupos" />
+  <SecaoTutorialCarousel
+    id="grupos-sisc"
+    titulo="Gestão de Grupos do SCFV"
+    descricao="Do cadastro de grupos à desativação e histórico, todas as funcionalidades do menu Grupos do SISC."
+    paginas={gruposCarousel}
+  />
+</section>
+
+<section id="menu-usuarios" class="space-y-4">
+  <SectionHeader number="4.3" title="Menu Usuários" accent="purple" subtitle="Consulta, cadastro provisório, vínculo, desvinculação e confirmação de participação" />
+  <SecaoTutorialCarousel
+    id="usuarios-sisc"
+    titulo="Gestão de Usuários do SCFV"
+    descricao="Todas as funcionalidades relacionadas aos usuários do Serviço de Convivência e Fortalecimento de Vínculos no SISC."
+    paginas={usuariosCarousel}
+    observacao="A confirmação de participação deve ser realizada até o dia 20 do último mês do trimestre, conforme a Portaria MDS nº 134/2013."
+  />
+</section>
+
+<section id="menu-relatorios" class="space-y-4">
+  <SectionHeader number="4.4" title="Menu Relatórios" accent="cyan" subtitle="Relatório Principal, Situações Prioritárias e Confirmação de Participação" />
+  <SecaoTutorialCarousel
+    id="relatorios-sisc"
+    titulo="Relatórios do SISC"
+    descricao="Relatórios pré-definidos para o acompanhamento e a gestão do SCFV: Principal, Situações Prioritárias e Confirmação de Participação."
+    paginas={relatoriosCarousel}
+  />
+
+  <div class="mt-4">
+    <AlertBox variant="info" title="Nota sobre as capturas de tela">
+      As capturas de tela apresentadas correspondem ao Manual do SISC (SNAS/MDS). O layout do sistema passou por atualizações (padrão gov.br) em 2025; a organização dos menus e das funcionalidades permanece a mesma.
+    </AlertBox>
+  </div>
+</section>

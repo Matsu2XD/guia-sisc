@@ -1,0 +1,11 @@
+node_modules/
+dist/
+.astro/
+.codegraph
+.omo/run-continuation/
+*.log
+.DS_Store
+.omo/
+.reasonix/
+reasonix.toml
+temp-p40-65.txt

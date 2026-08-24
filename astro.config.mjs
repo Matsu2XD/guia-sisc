@@ -1,0 +1,22 @@
+import { defineConfig } from 'astro/config'
+import react from '@astrojs/react'
+
+export default defineConfig({
+  site: 'https://guia-prontuario.sedsodh.org',
+  base: '/',
+  integrations: [
+    react(),
+  ],
+  output: 'static',
+  build: {
+    assets: '_astro',
+  },
+  vite: {
+    resolve: {
+      alias: { '@': '/src' },
+    },
+    optimizeDeps: {
+      include: ['react-dom/client'],
+    },
+  },
+})
