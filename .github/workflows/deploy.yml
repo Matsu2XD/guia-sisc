@@ -8,6 +8,12 @@ jobs:
   deploy:
     runs-on: ubuntu-latest
     steps:
+      - name: Diagnóstico de secrets
+        run: |
+          if [ -n "${{ secrets.VPS_HOST }}" ]; then echo "VPS_HOST: configurado"; else echo "::error::VPS_HOST está vazio"; fi
+          if [ -n "${{ secrets.VPS_USER }}" ]; then echo "VPS_USER: configurado"; else echo "::error::VPS_USER está vazio"; fi
+          if [ -n "${{ secrets.VPS_SSH_KEY }}" ]; then echo "VPS_SSH_KEY: configurado"; else echo "::error::VPS_SSH_KEY está vazio"; fi
+
       - name: Deploy via SSH
         uses: appleboy/ssh-action@v1
         with:
@@ -15,6 +21,7 @@ jobs:
           username: ${{ secrets.VPS_USER }}
           key: ${{ secrets.VPS_SSH_KEY }}
           port: 22
+          debug: true
           script: |
             cd /var/www/guia-sisc
             git pull origin master
