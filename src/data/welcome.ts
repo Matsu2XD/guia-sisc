@@ -24,8 +24,8 @@ export const WELCOME_TEAM = [
   {
     unit: 'Coordenação Estadual de Vigilância Socioassistencial (COOVIG) — SEDSODH/RJ',
     role: 'Coordenação',
-    responsible: 'Matheus Lopes',
-    support: 'Junier Goulart e Matheus de Freitas',
+    responsible: 'Matheus de Freitas',
+    support: 'Matheus de Freitas',
     email: 'servicosdeconvivencia@mds.gov.br',
   },
 ]

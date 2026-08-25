@@ -65,12 +65,12 @@ export const BLOCKS = [
     title: 'Bloco 1 — O Serviço de Convivência e Fortalecimento de Vínculos (SCFV)',
     accent: 'gestao',
     items: [
-      { id: 'o-que-e-scfv', title: 'O que é o SCFV ?' },
-      { id: 'finalidade-scfv', title: 'Qual Sua Finalidade ?' },
-      { id: 'eixos-norteadores', title: 'Quais são os Eixos Norteadores ?' },
-      { id: 'publico-alvo', title: 'Para quem é feito o SCFV ?' },
-      { id: 'grupos-desenvolvidos', title: 'O que é Desenvolvido Nos Grupos ?' },
-      { id: 'equipe-tecnica', title: 'Quais São as Equipes ?' },
+      { id: 'o-que-e-scfv', title: 'O que é o SCFV?' },
+      { id: 'finalidade-scfv', title: 'Qual a finalidade do SCFV?' },
+      { id: 'eixos-norteadores', title: 'Quais são os eixos norteadores?' },
+      { id: 'publico-alvo', title: 'Para quem é feito o SCFV?' },
+      { id: 'grupos-desenvolvidos', title: 'O que é desenvolvido nos grupos?' },
+      { id: 'equipe-tecnica', title: 'Quais são as equipes?' },
     ],
   },
   {
@@ -78,8 +78,8 @@ export const BLOCKS = [
     title: 'Bloco 2 — Registro e Financiamento do SCFV',
     accent: 'planejamento',
     items: [
-      { id: 'registro-sisc', title: 'Como o SCFV é registrado ?' },
-      { id: 'financiamento-scfv', title: 'Como é Financiado ?' },
+      { id: 'registro-sisc', title: 'Como o SCFV é registrado?' },
+      { id: 'financiamento-scfv', title: 'Como é financiado?' },
     ],
   },
   {
@@ -87,7 +87,7 @@ export const BLOCKS = [
     title: 'Bloco 3 — Legislação e Normativas Federais',
     accent: 'reprogramacao',
     items: [
-      { id: 'normativas-federais', title: 'Leis e Normativas Federais' },
+      { id: 'normativas-federais', title: 'Leis e normativas federais' },
     ],
   },
   {
