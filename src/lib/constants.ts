@@ -95,7 +95,7 @@ export const BLOCKS = [
     title: 'Bloco 4 — Manual do SISC',
     accent: 'controle',
     items: [
-      { id: 'acesso-sistema', title: 'Acesso ao Sistema' },
+      { id: 'acesso-sistema', title: 'Acesso ao sistema' },
       { id: 'menu-grupos', title: 'Menu Grupos' },
       { id: 'menu-usuarios', title: 'Menu Usuários' },
       { id: 'menu-relatorios', title: 'Menu Relatórios' },
