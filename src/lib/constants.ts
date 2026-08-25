@@ -53,10 +53,10 @@ export const FINAL_SECTIONS = [
 export const APPENDIX_SECTIONS = [
   { id: 'resumo-visual', title: 'Resumo: O que Pode e Não Pode' },
   { id: 'checklist-sisc', title: 'Checklist do SISC' },
-  { id: 'base-normativa', title: 'Base Normativa do SCFV' },
-  { id: 'regras-ouro', title: 'Regras de Ouro do Registro no SISC' },
-  { id: 'duvidas-recorrentes', title: 'Dúvidas Recorrentes' },
-  { id: 'informacoes-complementares', title: 'Informações Complementares' },
+  { id: 'base-normativa', title: 'Base normativa do SCFV' },
+  { id: 'regras-ouro', title: 'Regras de ouro do registro no SISC' },
+  { id: 'duvidas-recorrentes', title: 'Dúvidas recorrentes' },
+  { id: 'informacoes-complementares', title: 'Informações complementares' },
 ]
 
 export const BLOCKS = [
