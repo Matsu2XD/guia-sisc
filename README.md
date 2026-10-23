@@ -33,7 +33,12 @@ O **SISC — Sistema de Informações do Serviço de Convivência e Fortalecimen
 
 ## Executar localmente
 
+Requer **Node.js 24+** (versão fixada em `.nvmrc`):
+
 ```bash
+# Selecionar a versão do Node definida no .nvmrc
+nvm use
+
 # Instalar dependências
 npm install
 
